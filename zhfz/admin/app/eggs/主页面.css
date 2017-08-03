@@ -1,0 +1,12 @@
+body{
+    background-color:rgb(123,123,123);
+}
+#small{
+    background-color:tan;
+    text-align: center;
+    float: left;
+    width: 30rem;
+    height: 30rem;
+    padding: 1rem;
+    border:black solid;
+}

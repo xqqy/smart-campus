@@ -1,0 +1,8 @@
+[31-Jul-2017 10:31:50 Asia/Chongqing] PHP Notice:  Undefined variable: conn in /home/xqqy/web/zhfz/admin/adminh.php on line 20
+[31-Jul-2017 10:31:50 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /home/xqqy/web/zhfz/admin/adminh.php on line 20
+[01-Aug-2017 21:25:33 Asia/Chongqing] PHP Notice:  Undefined variable: conn in /home/xqqy/web/zhfz/admin/adminh.php on line 20
+[01-Aug-2017 21:25:33 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /home/xqqy/web/zhfz/admin/adminh.php on line 20
+[03-Aug-2017 21:14:33 Asia/Chongqing] PHP Notice:  Undefined variable: conn in /home/xqqy/web/zhfz/admin/adminh.php on line 20
+[03-Aug-2017 21:14:33 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /home/xqqy/web/zhfz/admin/adminh.php on line 20
+[03-Aug-2017 21:14:34 Asia/Chongqing] PHP Notice:  Undefined variable: conn in /home/xqqy/web/zhfz/admin/adminh.php on line 20
+[03-Aug-2017 21:14:34 Asia/Chongqing] PHP Notice:  Trying to get property of non-object in /home/xqqy/web/zhfz/admin/adminh.php on line 20
