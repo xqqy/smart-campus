@@ -23,7 +23,7 @@ zhtj密码：zhtjalwayswithyou；打开ZHTJ库
 zyfz密码：zyfzalwayswithyou；打开ZYFZ库
 ative密码：activemakeourlifebetter；打开ATIVE库
 ativep密码：K3LKLv6tQkAaFLaa;打开ATIVEP库
-Ver2.0.1.2 MM豆
+Ver2.0.3.2 MM豆
 
 Metro文档是目前使用的模板，详情见THANKS.txt
 

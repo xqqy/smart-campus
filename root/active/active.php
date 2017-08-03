@@ -34,6 +34,17 @@ body{width: 100%;
         if ($ative->connect_error){die("Could not connect!");}
         $ative->query('set names utf8');
 
+    $at =new mysqli("localhost","ativep","K3LKLv6tQkAaFLaa","ATIVEP");/*connect mysql ativep*/
+        if ($con->connect_error){die("Could not connect!");}
+        $at->query('set names utf8');
+
+    $sql="SELECT * FROM `".$_COOKIE['UID']."` WHERE ATID='".$_GET['ATID']."'";
+    $result=$at->query($sql);
+    $row=$result->fetch_assoc();
+    if($row['VER']!='0'){
+        die("<script language='javascript'>document.location = '".$row['VER']."'</script>");
+    }
+
         if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录");}/*登录验证*/
         $sql = "SELECT * FROM ADMIN WHERE UID='".$_COOKIE["UID"]."'";
 	    $result = $con->query($sql);
