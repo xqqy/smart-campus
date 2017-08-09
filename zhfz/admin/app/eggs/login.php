@@ -1,4 +1,14 @@
 <?php
+
+function sha512($data, $rawOutput=false){
+                if(!is_scalar($data)){
+                        return false;
+                }
+                $data = (string)$data;
+                $rawOutput = !!$rawOutput;
+                return hash('sha512', $data, $rawOutput);
+        }
+
 $con =new mysqli("localhost","login","loginmyphp","MAIN");/*connect mysql*/
 if ($con->connect_error)
   {
@@ -17,7 +27,7 @@ if($row['PSWD']==null){echo "NO USERS FIND!";}/*echo if no users*/
 else{
 
 
-if(password_verify($_POST['PSWD'],$row['PSWD']))
+if(password_verify(sha512($_POST['PSWD']),$row['PSWD']))
 	{
 	echo "LOGED IN!<br />";
 	echo "<script language='javascript'>document.location = 'loged.php'</script>";}

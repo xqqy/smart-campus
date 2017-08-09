@@ -2,9 +2,6 @@
 
     <!DOCTYPE html>  
     <html>  
-<script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/96c356a7.js","daovoice")</script>
-
-
     <head>  
         <meta charset="UTF-8">  
         <title>登录</title>  
@@ -13,17 +10,12 @@
     </head>  
     <body>  
 
-<script>
-daovoice('init', { 
-  app_id: "96c356a7"
-});
-daovoice('update');</script>
 
         <div id="login">  
             <h1>欢迎</h1>  
             <form method="post" id="form">  
-                <input id="uid" type="text" required="required" placeholder="用户名" class="onlyNumAlpha" name="UID"></input>  
-                <input id="pswd" type="password" required="required" placeholder="密码" class="onlyNumAlpha" name="PSWD"></input>  
+                <input id="uid" type="text" required="required" placeholder="用户名" name="UID"></input>  
+                <input id="pswd" type="password" required="required" placeholder="密码" name="PSWD"></input>  
                 <button class="sub" type="submit" onclick="mypswd()">登录</button>  
             </form>  
 

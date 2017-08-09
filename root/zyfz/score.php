@@ -21,10 +21,11 @@ $result = $con->query($sql);
 $row =  $result->fetch_assoc();
 if($row['ZYFZ']!=1){die("您没有使用此程序的权限！");}
 
-$sql = "select * from ADMIN where UID='".$_COOKIE["UID"]."'";/*select things*/
-$result = $con->query($sql);
-$row =  $result->fetch_assoc();
-if($row['TOKEN']==$_COOKIE['TOKEN'] and !is_null($_COOKIE['TOKEN'])){
+if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录");}/*登录验证*/
+        $sql = "SELECT * FROM ADMIN WHERE UID='".$_COOKIE["UID"]."'";
+	    $result = $con->query($sql);
+	    $row =  $result->fetch_assoc();
+    if($row['TOKEN']!=$_COOKIE['TOKEN']){die("请先登录");}
                         
 
                         if(!empty($_POST['UID'])){$con =new mysqli("localhost","register","registerpswdbjsdfz","MAIN");/*connect mysql*/
@@ -53,8 +54,8 @@ if($row['TOKEN']==$_COOKIE['TOKEN'] and !is_null($_COOKIE['TOKEN'])){
 			$sql="INSERT INTO ZYFZHSOY(UID,DATE,OTI,OTS,CTI,CTS,OTOR) VALUES ('".$_POST['UID']."','".date('Y-m-d h:i:s',time())."','".$ti."','".$ts."','".$_POST['TI']."','".$_POST['TS']."','".$_COOKIE['UID']."')";
                         $do = $xs->query($sql);
 
-                        if($result){echo $name.$_POST['UID']."增加校内学时".$_POST['TI']."增加校外学时". $_POST['TS'];}else{echo "ERROR";}}}}
-                        else{echo "请先登录";} ?>
+                        if($result){echo $name.$_POST['UID']."增加校内学时".$_POST['TI']."增加校外学时". $_POST['TS'];}else{echo "ERROR";}}}
+                         ?>
 </div>
 
 <div style="color:white;font-size:1.5rem;margin-left:20px;heigh:10%"><h1>志愿者部系统</h1></div>

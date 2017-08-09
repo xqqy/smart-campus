@@ -33,6 +33,7 @@ body{
     <?php
 $con =new mysqli("localhost","register","registerpswdbjsdfz","MAIN");/*connect mysql*/
 if ($con->connect_error){echo 'Could not connect:';}
+$con->query('set names utf8');
 
 if(!$_COOKIE["UID"]){echo "请先登录";}else{
 $sql = "select * from LOGIN where UID='".$_COOKIE["UID"]."'";/*select things*/

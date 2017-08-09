@@ -13,15 +13,18 @@
 $con =new mysqli("localhost","login","loginmyphp","MAIN");/*connect mysql*/
 if ($con->connect_error){die("Could not connect!");}
 
+
+
 $sql = "select * from AUZN where UID='".$_COOKIE["UID"]."'";/*select things*/
 $result = $con->query($sql);
 $row =  $result->fetch_assoc();
 if($row['ZHTJ']!=1){die("您没有使用此程序的权限！");}
 
-$sql = "select * from ADMIN where UID='".$_COOKIE["UID"]."'";/*select things*/
-$result = $con->query($sql);
-$row =  $result->fetch_assoc();
-if($row['TOKEN']==$_COOKIE['TOKEN'] and !is_null($_COOKIE['TOKEN'])){
+if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录");}/*登录验证*/
+        $sql = "SELECT * FROM ADMIN WHERE UID='".$_COOKIE["UID"]."'";
+	    $result = $con->query($sql);
+	    $row =  $result->fetch_assoc();
+    if($row['TOKEN']!=$_COOKIE['TOKEN']){die("请先登录");}
  
 
                 if(!empty($_POST['UID'])){
@@ -43,8 +46,7 @@ if($row['TOKEN']==$_COOKIE['TOKEN'] and !is_null($_COOKIE['TOKEN'])){
                         $sql="UPDATE ZHTJMAIN SET NUM='".$_POST['NUM']."'WHERE UID='".$_POST['UID']."'";
                         $result = $tj->query($sql);
 
-                        if($result){echo $name.$_POST['UID']."团籍代码由".$num."变更为". $_POST['NUM'];}else{echo "ERROR";}}}}
-                        else{echo "请先登录";}
+                        if($result){echo $name.$_POST['UID']."团籍代码由".$num."变更为". $_POST['NUM'];}else{echo "ERROR";}}}
 ?>
 </div>
 

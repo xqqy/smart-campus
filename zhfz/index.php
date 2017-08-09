@@ -104,6 +104,7 @@ daovoice('update');</script>
 if(!empty($_POST['UID'])){
 $con =new mysqli("localhost","register","registerpswdbjsdfz","MAIN");/*connect mysql*/
 if ($con->connect_error){die("Could not connect!");;}
+$con->query("set names utf8");
 
 if($_POST["UID"]==null){echo "Entry a UID!";}/*UID NULL CHECK*/
 else {

@@ -92,8 +92,8 @@ $result=$tj->query($sql);
 $row =  $result->fetch_assoc();
 
 if($num!=0 and $num!=-1 and $num!=1){
-  echo '<div class="small"  >';
-}
+  echo '<div class="small">';
+
 
 	if($row['FASHION']==null){echo "未知返回值，请联系校团委<br />";
   echo "你的返回值是:".$num;}//返回值
@@ -101,7 +101,7 @@ if($num!=0 and $num!=-1 and $num!=1){
 else{
 if($num!=0){
 echo $row['FASHION'];
-}
+}}
 
 }
 
@@ -149,6 +149,29 @@ $con->close();
 <p style="font-size:15px">2017校团委志愿者部</p>
 </div>
 
+
+<!--未完成的推送系统-->
+<?php 
+  class SMALL/*是时候面向对象了！*/{
+                var $msgid;
+                var $name;
+                var $info; /*设置每个磁铁的标题和信息*/
+
+                function PRINT(){
+                        echo "<div class='small'>".'<a href="active.php?ATID='. $this->atid .'">';/*设置为链接模式，get方法传递参数*/
+                        echo "<p style='font-size:40px;'>".$this->name."</p>";/*输出title*/
+                        echo "<p style='font-size:25px;'>".$this->info."</p>";/*输出帮助*/
+                        echo"</a></div>";
+                }
+
+                function __construct($row){
+                        $this->atid=$row['ATID'];
+                        $this->name=$row['NAME'];
+                        $this->info=$row['INFO'];
+                }
+                
+        }
+        ?>
 
 </div>
 

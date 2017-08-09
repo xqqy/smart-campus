@@ -1,0 +1,28 @@
+<html>  
+    <head>  
+        <meta charset="UTF-8">  
+        <title>活动注册</title>  
+        <link rel="stylesheet" type="text/css" href="login.css"/>
+    </head>  
+    <body>  
+
+
+        <div id="login">  
+            <h1>欢迎</h1>  
+            <form method="post" id="form">  
+                <input type="text" required="required" placeholder="活动名称" name="UID" />  
+                <input type="text" required="required" placeholder="活动说明"name="PSWD" />
+                <input type="text" required="required" placeholder="活动编号" name="PSWD" />
+                <input type="datetime" required="required" placeholder="活动开始日期" name="PSWD" />
+                <input type="datetime" required="required" placeholder="活动结束日期" name="PSWD" />
+                <select name="PEOPLE">
+                    <option value="0" selected="selected">不限制表内人员</option>
+                    <option value="1">仅允许表内人员</option>
+                    <option value="2">不允许表内人员</option>
+                </select>
+                
+                <button class="sub" type="submit" onclick="mypswd()">确定</button>  
+            </form>  
+        </div>
+    </body>
+</html>
