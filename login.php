@@ -11,7 +11,7 @@ $row =  $result->fetch_assoc();
 
 //echo "sqlPID=".$row['PID']."sqlPSWD=".$row['PSWD'];
 
-if($row['PSWD']==null){die("Error! NO USERS FIND!错误：没有这个用户");}
+if($row['PSWD']==null){die("Error! NO USERS FIND!错误：没有这个用户(14)");}
 
 
 if(password_verify($_POST['PSWD'],$row['PSWD']))
@@ -19,7 +19,7 @@ if(password_verify($_POST['PSWD'],$row['PSWD']))
         echo $row['CCID'];
     }
 
-	else{echo "ERROR! Wrong Password 抱歉，密码错误";}
+	else{echo "ERROR! Wrong Password 抱歉，密码错误(22)";}
 
 $con->close();}
 ?>

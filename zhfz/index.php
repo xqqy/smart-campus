@@ -114,7 +114,7 @@ $row =  $result->fetch_assoc();
 
 //echo "sqlUID=".$row['UID']."sqlPSWD=".$row['PSWD'];
 
-if($row['PSWD']==null){echo "Error! NO USERS FIND!错误：没有这个用户 ";}
+if($row['PSWD']==null){echo "Error! NO USERS FIND!错误(117)：没有这个用户 ";}
 
 else{/*check password*/
 
@@ -130,7 +130,7 @@ if(password_verify($_POST['PSWD'],$row['PSWD']))
 	echo "<script language='javascript'>document.location = '/zhfz/loged/frame.html'</script>";
 	echo "<a href='/zhfz/loged/frame.html'>IF your brower does not go next page,click me</a>";}
 
-	else{echo "ERROR! Wrong Password 抱歉，密码错误";}}}
+	else{echo "ERROR! Wrong Password 抱歉，密码错误(133)";}}}
 
 $con->close();}
 ?>

@@ -68,7 +68,7 @@ text-decoration: none;    }
         if($result){echo "成功";}else{
         $sql="SELECT * FROM `".$_GET['ATID']."` WHERE UID='".$_COOKIE['UID']."'";
         $result = $ative->query($sql);
-        if($result){echo "您已加入活动";}else{echo "错误";}}}
+        if($result){echo "您已加入活动";}else{echo "错误(71)";}}}
 
         if($at['VER']==1){/*是否添加加入按钮*/
                 echo '<div class="webdesigntuts-workshop">';

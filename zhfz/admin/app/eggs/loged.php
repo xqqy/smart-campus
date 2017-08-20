@@ -17,6 +17,8 @@ echo $row['NAME'];
 <title>服务目录</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <html>
+这是我们第一个简陋的版本：我们把它保留了下来留作纪念。<br />
+如果你想改进这套系统，或者有任何建议。欢迎你联系志愿者部！您可以直接把消息塞到团委的袋子里。
 <br /><a href="zyfz.php" target="iframe_a"><button>查看志愿者学时</button></a><br />
 <a href="zhtj.php" target="iframe_a"><button>查看团籍信息</button></a>
 <br />

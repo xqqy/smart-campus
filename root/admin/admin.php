@@ -47,9 +47,9 @@ if(password_verify($_POST['OPSWD'],$row['PSWD']))
 		$result=$con->query($sql);
 			if($result)
 			{echo "密码更改成功!";}
-			else{echo "密码更改失败！";}}
-		else{echo "两次输入不一致";}}
-	else{echo "原密码错误";}}
+			else{echo "密码更改失败！(50)";}}
+		else{echo "两次输入不一致(51)";}}
+	else{echo "原密码错误(52)";}}
 
 $con->close();
 ?>

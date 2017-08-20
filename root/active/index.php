@@ -30,7 +30,7 @@ text-decoration: none;    }
 <div style="color:white;font-size:1.5rem;margin-left:20px;heigh:10%"><h1>活动管理</h1></div>
 
 </div>
-<div style="top:10%;height:90%">
+<div style="top:10%;height:90%;color:snow">
         <?php 
         if(!$_COOKIE['UID']){die("请先登录");}
         
@@ -64,23 +64,21 @@ text-decoration: none;    }
 
 $sqla="SELECT * FROM `".$_COOKIE['UID']."` WHERE 1";
 $resulta=$at->query($sqla);
-
-if($resulta){      
-    // 输出数据
-    while($rowa = $resulta->fetch_assoc()){
-        $sql="SELECT * FROM `MAIN` WHERE ATID='".$rowa['ATID']."'";
-        $result=$con->query($sql);
-        $row = $result->fetch_assoc();
-                $now= new METRO($row);
-                $now->PRINT();
-    }
-
-
-   /* $sql="SELECT * FROM `MAIN` WHERE ATID='0000'";
-        $con->query($sql);
-        $row = $result->fetch_assoc();
-                $now= new METRO($row);
-                $now->PRINT();*/
-}
+if($resulta){
+   if($rowa = $resulta->fetch_assoc()){
+       $result=$con->query($sql);
+       $row = $result->fetch_assoc();
+       $now= new METRO($row);
+       $now->PRINT();
+       // 输出数据
+       while($rowa = $resulta->fetch_assoc()){
+            $sql="SELECT * FROM `MAIN` WHERE ATID='".$rowa['ATID']."'";
+            $result=$con->query($sql);
+            $row = $result->fetch_assoc();
+            $now= new METRO($row);
+            $now->PRINT();
+        }
+    }else{echo "没有结果";}
+}else{echo "系统内部错误(82)";}
  ?>
 </div>

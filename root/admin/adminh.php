@@ -50,10 +50,10 @@ if(password_verify($_POST['OPSWD'],$row['PSWD']))
 		{$sql="UPDATE ADMIN SET PSWD='". password_hash($_POST["NPSWD"],PASSWORD_DEFAULT) ."' WHERE UID='".$_COOKIE["UID"]."'";
 		$result=$con->query($sql);
 			if($result)
-			{echo "密码更改成功!";}
-			else{echo "密码更改失败！";}}
-		else{echo "两次输入不一致";}}
-	else{echo "原密码错误";}}
+			{echo "密码更改成功!(53)";}
+			else{echo "密码更改失败！(54)";}}
+		else{echo "两次输入不一致(55)";}}
+	else{echo "原密码错误(56)";}}
 
 $con->close();}
 ?>

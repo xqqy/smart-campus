@@ -54,7 +54,7 @@ if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录");}/*�
 			$sql="INSERT INTO ZYFZHSOY(UID,DATE,OTI,OTS,CTI,CTS,OTOR) VALUES ('".$_POST['UID']."','".date('Y-m-d h:i:s',time())."','".$ti."','".$ts."','".$_POST['TI']."','".$_POST['TS']."','".$_COOKIE['UID']."')";
                         $do = $xs->query($sql);
 
-                        if($result){echo $name.$_POST['UID']."增加校内学时".$_POST['TI']."增加校外学时". $_POST['TS'];}else{echo "ERROR";}}}
+                        if($result){echo $name.$_POST['UID']."增加校内学时".$_POST['TI']."增加校外学时". $_POST['TS'];}else{echo "ERROR";}}}if(!$do){echo "无法保存更改记录！";}
                          ?>
 </div>
 

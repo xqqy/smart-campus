@@ -81,7 +81,7 @@ while($row = $result->fetch_assoc()){
                 $now= new TABLE($row);
                 $now->PRINT();
     }
-} else {echo "系统错误";}
+} else {echo "系统错误(84)";}
 $con->close();
 $ative->close();
 ?>

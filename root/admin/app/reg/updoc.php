@@ -28,7 +28,7 @@ if ($_FILES["file"]["size"] < 2048000  and in_array($extension, $allowedExts))
 {
 	if ($_FILES["file"]["error"] > 0)
 	{
-		echo "错误：: " . $_FILES["file"]["error"] . "<br>";
+		echo "错误(31)：: " . $_FILES["file"]["error"] . "<br>";
 	}
 	else
 	{
