@@ -41,7 +41,7 @@ body{
   user_id: "<?php echo $_COOKIE['UID'] ?>", // 必填: 该用户在您系统上的唯一ID
   name: <?php $con =new mysqli("localhost","login","loginmyphp","MAIN");/*connect mysql*/
 	if ($con->connect_error){die("Could not connect!");}
-if(!$_COOKIE["UID"]){echo "请先登录";}else{
+if(!$_COOKIE["UID"]){die();}else{
 	$con->query('set names utf8'); 
 		$sql = "SELECT * FROM LOGIN WHERE UID=".$_COOKIE["UID"];
 		$result = $con->query($sql);
@@ -58,7 +58,7 @@ daovoice('update');</script>
 
 <!--智慧团籍-->
     <?php
-    if(empty($_COOKIE['UID'])){die("请先登录");}
+    if(empty($_COOKIE['UID'])){die("请先登录(61)");}
 
 $con =new mysqli("localhost","login","loginmyphp","MAIN");/*connect mysql*/
 if ($con->connect_error)
@@ -74,11 +74,11 @@ if ($con->connect_error)
   }
 $tj->query('set names utf8');
 
-if(!$_COOKIE["UID"]){echo "请先登录";}else{
+if(!$_COOKIE["UID"]){echo "请先登录(77)";}else{
 $sql = "SELECT * FROM LOGIN WHERE UID=".$_COOKIE["UID"];
 $result = $con->query($sql);
 $row =  $result->fetch_assoc();
-if(!$_COOKIE["UID"] or $row['TOKEN']!=$_COOKIE['TOKEN']){echo "请先登录";}else{//登录验证
+if(!$_COOKIE["UID"] or $row['TOKEN']!=$_COOKIE['TOKEN']){echo "请先登录(81)";}else{//登录验证
 
 
 $sql = "SELECT * FROM ZHTJMAIN WHERE UID=".$_COOKIE["UID"];//查找
@@ -120,7 +120,7 @@ echo '</div>';}
 
 <div class="small"  >  <!--智慧学时-->
      <?php
-     if(empty($_COOKIE['UID'])){die("请先登录");}
+     if(empty($_COOKIE['UID'])){die("请先登录(123)");}
 
 $con =new mysqli("localhost","login","loginmyphp","MAIN");/*connect mysql*/
 $zy =new mysqli("localhost","zyfz","zyfzalwayswithyou","ZYFZ");/*connect mysql*/
@@ -129,11 +129,11 @@ if ($con->connect_error)
   die('Could not connect: ' . mysql_error());
   }
 $con->query('set names utf8');
-if(!$_COOKIE["UID"]){echo "请先登录";}else{
+if(!$_COOKIE["UID"]){echo "请先登录(132)";}else{
 $sql = "SELECT * FROM LOGIN WHERE UID=".$_COOKIE["UID"];
 $result = $con->query($sql);
 $row =  $result->fetch_assoc();
-if( $row['TOKEN']!=$_COOKIE['TOKEN']){echo "请先登录";}else{//登录验证
+if( $row['TOKEN']!=$_COOKIE['TOKEN']){echo "请先登录(136)";}else{//登录验证
 
 $sql = "SELECT * FROM ZYFZMAIN WHERE UID=".$_COOKIE["UID"];//查询
 $result = $zy->query($sql);

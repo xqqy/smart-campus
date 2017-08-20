@@ -45,11 +45,11 @@ body{width: 100%;
         die("<script language='javascript'>document.location = '".$row['VER']."'</script>");
     }
 
-        if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录");}/*登录验证*/
+        if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录(48)");}/*登录验证*/
         $sql = "SELECT * FROM ADMIN WHERE UID='".$_COOKIE["UID"]."'";
 	    $result = $con->query($sql);
 	    $row =  $result->fetch_assoc();
-        if($row['TOKEN']!=$_COOKIE['TOKEN']){die("请先登录");}
+        if($row['TOKEN']!=$_COOKIE['TOKEN']){die("请先登录(52)");}
 
         $sql="SELECT * FROM `".$_GET['ATID']."` WHERE 1";/*读取所有的条目*/
         $result=$ative->query($sql);

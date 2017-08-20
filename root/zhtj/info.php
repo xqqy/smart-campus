@@ -20,11 +20,11 @@ $result = $con->query($sql);
 $row =  $result->fetch_assoc();
 if($row['ZHTJ']!=1){die("您没有使用此程序的权限！");}
 
-if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录");}/*登录验证*/
+if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录(23)");}/*登录验证*/
         $sql = "SELECT * FROM ADMIN WHERE UID='".$_COOKIE["UID"]."'";
 	    $result = $con->query($sql);
 	    $row =  $result->fetch_assoc();
-    if($row['TOKEN']!=$_COOKIE['TOKEN']){die("请先登录");}
+    if($row['TOKEN']!=$_COOKIE['TOKEN']){die("请先登录(27)");}
  
 
                 if(!empty($_POST['UID'])){

@@ -32,7 +32,7 @@ body{
 $con =new mysqli("localhost","register","registerpswdbjsdfz","MAIN");/*connect mysql*/
 if ($con->connect_error){die("Could not connect!");;}
 
-if(!$_COOKIE["UID"]){echo "请先登录";}else{
+if(!$_COOKIE["UID"]){echo "请先登录(35)";}else{
 
 
 $sql = "select * from ADMIN where UID='".$_COOKIE["UID"]."'";/*select things*/

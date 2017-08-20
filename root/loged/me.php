@@ -10,12 +10,12 @@
 $con =new mysqli("localhost","login","loginmyphp","MAIN");/*connect mysql*/
 if ($con->connect_error){die("Could not connect!");}
 $con->query('set names utf8');
-if(empty($_COOKIE['UID'])){die("请先登录");}
+if(empty($_COOKIE['UID'])){die("请先登录(13)");}
 
 	$sql = "SELECT * FROM ADMIN WHERE UID='".$_COOKIE["UID"]."'";
 	$result = $con->query($sql);
 	$row =  $result->fetch_assoc();
-	if(!$_COOKIE["UID"] or $row['TOKEN']!=$_COOKIE['TOKEN']){echo "请先登录";}
+	if(!$_COOKIE["UID"] or $row['TOKEN']!=$_COOKIE['TOKEN']){echo "请先登录(18)";}
 	else {echo "Welcome!";
 	echo $row['NAME'];}
 	?>

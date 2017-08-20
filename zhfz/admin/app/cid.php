@@ -34,11 +34,11 @@ body{
 $con =new mysqli("localhost","register","registerpswdbjsdfz","MAIN");/*connect mysql*/
 if ($con->connect_error){echo 'Could not connect:';}
 
-if(!$_COOKIE["UID"]){echo "请先登录";}else{
+if(!$_COOKIE["UID"]){echo "请先登录(37)";}else{
 $sql = "select * from LOGIN where UID='".$_COOKIE["UID"]."'";/*select things*/
 $result = $con->query($sql);
 $row =  $result->fetch_assoc();
-if($row['TOKEN']!=$_COOKIE['TOKEN']){echo"请先登录";}else{
+if($row['TOKEN']!=$_COOKIE['TOKEN']){echo"请先登录(41)";}else{
 
         $sql="UPDATE `LOGIN` SET `CID`='".$_COOKIE['ADD']."' WHERE UID='".$_COOKIE['UID']."'";
         $result = $con->query($sql);

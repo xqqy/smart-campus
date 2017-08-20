@@ -38,11 +38,11 @@ text-decoration: none;    }
         if ($ative->connect_error){die("Could not connect!");}
         $ative->query('set names utf8');
 
-        if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录");}/*登录验证*/
+        if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录(41)");}/*登录验证*/
         $sql = "SELECT * FROM LOGIN WHERE UID='".$_COOKIE["UID"]."'";
 	$result = $con->query($sql);
 	$row =  $result->fetch_assoc();
-        if($row['TOKEN']!=$_COOKIE['TOKEN']){die("请先登录");}
+        if($row['TOKEN']!=$_COOKIE['TOKEN']){die("请先登录(45)");}
 
         $sql="SELECT * FROM `MAIN` WHERE ATID='".$_GET['ATID']."'";/*查看限制*/
         $result=$ative->query($sql);

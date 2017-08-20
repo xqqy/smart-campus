@@ -19,13 +19,13 @@ if ($con->connect_error){die("Could not connect!");}
 $sql = "select * from AUZN where UID='".$_COOKIE["UID"]."'";/*select things*/
 $result = $con->query($sql);
 $row =  $result->fetch_assoc();
-if($row['ZYFZ']!=1){die("您没有使用此程序的权限！");}
+if($row['ZYFZ']!=1){die("您没有使用此程序的权限！(22)");}
 
-if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录");}/*登录验证*/
+if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录(24)");}/*登录验证*/
         $sql = "SELECT * FROM ADMIN WHERE UID='".$_COOKIE["UID"]."'";
 	    $result = $con->query($sql);
 	    $row =  $result->fetch_assoc();
-    if($row['TOKEN']!=$_COOKIE['TOKEN']){die("请先登录");}
+    if($row['TOKEN']!=$_COOKIE['TOKEN']){die("请先登录(28)");}
                         
 
                         if(!empty($_POST['UID'])){$con =new mysqli("localhost","register","registerpswdbjsdfz","MAIN");/*connect mysql*/
@@ -35,7 +35,7 @@ if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录");}/*�
                         $result = $con->query($sql);
                         $row =  $result->fetch_assoc();
                         $name=$row['NAME'];
-                        if(empty($name)){echo "查无此人";}else{
+                        if(empty($name)){echo "查无此人(38)";}else{
                         
                         $xs =new mysqli("localhost","zyfz","zyfzalwayswithyou","ZYFZ");/*connect mysql*/
                       if ($xs->connect_error){die("Could not connect!");} 
@@ -54,7 +54,8 @@ if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录");}/*�
 			$sql="INSERT INTO ZYFZHSOY(UID,DATE,OTI,OTS,CTI,CTS,OTOR) VALUES ('".$_POST['UID']."','".date('Y-m-d h:i:s',time())."','".$ti."','".$ts."','".$_POST['TI']."','".$_POST['TS']."','".$_COOKIE['UID']."')";
                         $do = $xs->query($sql);
 
-                        if($result){echo $name.$_POST['UID']."增加校内学时".$_POST['TI']."增加校外学时". $_POST['TS'];}else{echo "ERROR";}}}if(!$do){echo "无法保存更改记录！";}
+                        if($result){echo $name.$_POST['UID']."增加校内学时".$_POST['TI']."增加校外学时". $_POST['TS'];}else{echo "ERROR";}}
+                        if(!$do){echo "无法保存更改记录！(58)";}}
                          ?>
 </div>
 

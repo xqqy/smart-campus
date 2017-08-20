@@ -52,7 +52,7 @@ if($row['TOKEN']==$_COOKIE['TOKEN'] and !is_null($_COOKIE['TOKEN'])){
 				echo $row['HELP']."<br />";
 				echo "<a href='".$row['FAS']."'><button>DO THIS COMMAND</button></a>";
 				setcookie("ADD", $_POST['ADD'], 0);}}
-else{echo "请先登录";}
+else{echo "请先登录(55)";}
 				
 
 

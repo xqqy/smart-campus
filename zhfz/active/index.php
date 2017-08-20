@@ -80,7 +80,7 @@ if($result){
   user_id: "<?php echo $_COOKIE['UID'] ?>", // 必填: 该用户在您系统上的唯一ID
   name: <?php $con =new mysqli("localhost","login","loginmyphp","MAIN");/*connect mysql*/
 	if ($con->connect_error){die("Could not connect!");}
-if(!$_COOKIE["UID"]){echo "请先登录";}else{
+if(!$_COOKIE["UID"]){echo "请先登录(83)";}else{
 	$con->query('set names utf8'); 
 		$sql = "SELECT * FROM LOGIN WHERE UID=".$_COOKIE["UID"];
 		$result = $con->query($sql);

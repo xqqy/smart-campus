@@ -35,11 +35,11 @@ $con =new mysqli("localhost","register","registerpswdbjsdfz","MAIN");/*connect m
 if ($con->connect_error){echo 'Could not connect:';}
 $con->query('set names utf8');
 
-if(!$_COOKIE["UID"]){echo "请先登录";}else{
+if(!$_COOKIE["UID"]){echo "请先登录(38)";}else{
 $sql = "select * from LOGIN where UID='".$_COOKIE["UID"]."'";/*select things*/
 $result = $con->query($sql);
 $row =  $result->fetch_assoc();
-if($row['TOKEN']!=$_COOKIE['TOKEN']){echo"请先登录";}else{
+if($row['TOKEN']!=$_COOKIE['TOKEN']){echo"请先登录(42)";}else{
 
         $sql="UPDATE `LOGIN` SET `NAME`='".$_COOKIE['ADD']."' WHERE UID='".$_COOKIE['UID']."'";
         $result = $con->query($sql);

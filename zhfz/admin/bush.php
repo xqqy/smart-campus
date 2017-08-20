@@ -40,7 +40,7 @@ $sql = "select * from LOGIN where UID='".$_COOKIE["UID"]."'";/*select things*/
 $result = $con->query($sql);
 $row =  $result->fetch_assoc();
 if ($con->connect_error){die("Could not connect!");}
-if(!$_COOKIE["UID"] or $_COOKIE['TOKEN']!=$row['TOKEN']){echo "请先登录";}else{
+if(!$_COOKIE["UID"] or $_COOKIE['TOKEN']!=$row['TOKEN']){echo "请先登录(43)";}else{
 
 
 

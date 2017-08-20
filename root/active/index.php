@@ -32,7 +32,7 @@ text-decoration: none;    }
 </div>
 <div style="top:10%;height:90%;color:snow">
         <?php 
-        if(!$_COOKIE['UID']){die("请先登录");}
+        if(!$_COOKIE['UID']){die("请先登录(35)");}
         
         class METRO/*是时候面向对象了！*/{
                 var $atid;

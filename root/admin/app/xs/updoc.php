@@ -4,11 +4,11 @@ $con =new mysqli("localhost","register","registerpswdbjsdfz","MAIN");/*connect m
 if ($con->connect_error){die("Could not connect!");;}
 $con->query("set names utf8");
 
-if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录");}/*登录验证*/
+if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录(7)");}/*登录验证*/
         $sql = "SELECT * FROM ADMIN WHERE UID='".$_COOKIE["UID"]."'";
 	    $result = $con->query($sql);
 	    $row =  $result->fetch_assoc();
-    if($row['TOKEN']!=$_COOKIE['TOKEN']){die("请先登录");}
+    if($row['TOKEN']!=$_COOKIE['TOKEN']){die("请先登录(11)");}
 
 
 
