@@ -63,7 +63,7 @@ if($row['ZYFZ']==1){
                 echo '<li class="">
                     <div class="menu-abs-bg background-color"></div>
                     <div class="services-icon menu-specs">
-                        <a href="/root/zyfz/score.php" target="showframe">志愿者部系统</a>
+                        <a href="/root/zyfz/index.php" target="showframe">志愿者部系统</a>
                         <!--<span>更改密码、设置旧学号、个人信息……</span>-->
                     </div>
                 </li>';}

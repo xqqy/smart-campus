@@ -57,14 +57,15 @@ if ($_FILES["file"]["size"] < 2048000  and in_array($extension, $allowedExts))
 		$resultadd=$xs->query($sqlxs);
 		
 		$t=0;
-		$resultdo=0;
+		$resultdo=false;
 		while(!$resultdo and $t<1000000){
-		$sql="INSERT INTO ZYFZHSOY(UID,DATE,OTI,OTS,CTI,CTS,OTOR,RND) VALUES ('".$in[0]."','".date('Y-m-d h:i:s',time())."','".$ti."','".$ts."','".$in[1]."','".$in[2]."','".$_COOKIE['UID']."','".mt_rand()."')";
+		$sql="INSERT INTO ZYFZHSOY(UID,DATE,OTI,OTS,CTI,CTS,OTOR,RND) VALUES ('".$in[0]."','".date('Y-m-d h:i:s',time())."','".$ti."','".$ts."','".$in[1]."','".$in[2]."','".$_COOKIE['UID']."','".rand()."')";
 		echo $sql;
 		$resultdo = $xs->query($sql);/*保存记录*/}
 
-		if($resultadd and $resultdo){echo $in[0]."设置成功<br />";}else{echo $in[0]."设置失败<br />";}
+		if($resultadd){echo $in[0]."设置成功<br />";}else{echo $in[0]."设置失败(66)<br />";}
 		}
+		if(!$resultdo){echo $in[0]."更改记录保存失败(68)";}
 		fclose($file);
 
 			}
