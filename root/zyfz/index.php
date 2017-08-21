@@ -37,6 +37,21 @@
                 <button class="sub" type="submit">提交</button>
             </form>  
         </div>  
+
+
+<div class="login">  
+        <h1 style="font-size:1.5rem">批量学时添加系统</h1>  
+	<p style="color:red">导入前必须备份学时表！</p>
+        <form action="javascript:xsaddpl" method="post" enctype="multipart/form-data">
+			<label for="file">文件名：</label>
+			<input type="file" name="file" id="file"><br />
+			<button class="sub" type="submit">提交</button>
+		</form>
+	<a href="/root/admin/app/xs/help.txt">帮助</a>
+	</div>
+<!--"/root/admin/app/xs/updoc.php"-->
+
+
     </div> 
     </body>  
     </html>  
