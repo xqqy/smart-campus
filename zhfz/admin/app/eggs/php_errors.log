@@ -1,4 +1,0 @@
-[05-Aug-2017 12:44:02 Asia/Chongqing] PHP Fatal error:  Uncaught Error: Call to undefined function sha512() in /home/xqqy/web/zhfz/admin/app/eggs/login.php:20
-Stack trace:
-#0 {main}
-  thrown in /home/xqqy/web/zhfz/admin/app/eggs/login.php on line 20
