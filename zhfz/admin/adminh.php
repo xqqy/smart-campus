@@ -82,7 +82,7 @@ $con->close();}
 <p style="color:#000">点击确定前请确定指令及其附加值正确，错误的指令可能损坏您的账户！</p>
                 <input type="text" required="required" placeholder="指令" class="onlyNumAlpha" name="CMD"></input>  
                 <input type="text" placeholder="附加值" class="onlyNumAlpha" name="ADD"></input>  
-                <button class="sub" type="submit">我已知风险并确定继续</button>  
+                <button class="sub" type="submit">确定</button>  
 		
             </form>  
         </div>

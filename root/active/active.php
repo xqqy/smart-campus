@@ -15,7 +15,7 @@ body{width: 100%;
 <div style="height:10%">
     <a href="active.php?ATID=<?php echo $_GET['ATID']?>&DEL=1"><button>删除这个活动</button></a>
     <a href="active.php?ATID=<?php echo $_GET['ATID']?>&CLS=1"><button>清空人员名单</button></a>
-    <a href="active.php?ATID=<?php echo $_GET['ATID']?>&PRT=1"><button>打印人员名单</button></a>
+    <!--<a href="active.php?ATID=<?php echo $_GET['ATID']?>&PRT=1"><button>打印人员名单</button></a>-->
 </div>
 <div style="height:90%;color:snow">
 人员名单：
@@ -57,7 +57,7 @@ body{width: 100%;
         class TABLE/*是时候面向对象了！*/{
                 var $uid;
                 var $name;
-                var $cid; /*设置每个磁铁的标题和信息*/
+                var $cid; /*设置标题和信息*/
 
                 function PRINT(){
                         echo "<tr>";

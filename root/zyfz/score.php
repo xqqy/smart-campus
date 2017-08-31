@@ -13,8 +13,7 @@ if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录(10)");}
 	    $row =  $result->fetch_assoc();
     if($row['TOKEN']!=$_COOKIE['TOKEN']){die("请先登录(14)");}
                         
-                        $con =new mysqli("localhost","register","registerpswdbjsdfz","MAIN");/*connect mysql*/
-                      if ($con->connect_error){die("Could not connect!");} 
+
                       $con->query('set names utf8');
                         $sql = "select * from LOGIN where UID='".$_POST["UID"]."'";/*select things*/
                         $result = $con->query($sql);
@@ -39,11 +38,11 @@ if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录(10)");}
                         $t=0;
                         $resultdo=false;
                         while(!$resultdo and $t<1000000){
-                            $sql="INSERT INTO ZYFZHSOY(UID,DATE,OTI,OTS,CTI,CTS,OTOR,RND) VALUES ('".$_POST['UID']."','".date('Y-m-d H:i:s',time())."','".$ti."','".$ts."','".$_POST['TI']."','".$_POST['TS']."','".$_COOKIE['UID']."','".rand()."')";
+                            $sql="INSERT INTO ZYFZHSOY(UID,DATE,OTI,OTS,CTI,CTS,OTOR,RND) VALUES ('".$_POST['UID']."','".date('Y-m-d H:i:s',time())."','".$ti."','".$ts."','".$_POST['TI']."','".$_POST['TS']."','".$_COOKIE['UID']."','".mt_rand()."')";
                         $resultdo = $xs->query($sql);/*保存记录*/}
 
 
                         $do = $xs->query($sql);
-                        if($result){echo $name.$_POST['UID']."增加校内学时".$_POST['TI']."增加校外学时". $_POST['TS'];}else{echo "ERROR";}
+                        if($result){echo $name.$_POST['UID']."增加校内学时".$_POST['TI']."增加校外学时". $_POST['TS'];}else{echo "ERROR(46)";}
                         if(!$resultdo){echo "无法保存更改记录！(49)";}
                          ?>

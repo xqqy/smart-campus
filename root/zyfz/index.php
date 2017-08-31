@@ -15,25 +15,26 @@
 
 <div style="color:white;font-size:1.5rem;margin-left:20px;height:10%"><h1>志愿者部系统</h1></div>
 <div id="message" style="color:#fff"></div>
-<div style="position:absolute;top:13%;margin:50px;"> 
+<div style="position:absolute;top:20%;margin:50px;"> 
 
         <div class="login">  
             <h1>学时管理</h1>  
             <form method="post" action="javascript:xsadd()" id="form" name="form"> 
                 <input type="text" required="required" placeholder="UID" class="onlyNumAlpha" id="UID" name="UID" />
-                <input type="text" required="required" placeholder="校内学时" class="onlyNumAlpha" id="TI" name="TI" />
-                <input type="text" required="required" placeholder="校外学时" class="onlyNumAlpha" id="TS" name="TS" />
+                <input type="text" required="required" placeholder="校内学时" class="onlyNumAlpha" id="TIadd" name="TIadd" />
+                <input type="text" required="required" placeholder="校外学时" class="onlyNumAlpha" id="TSadd" name="TSadd" />
                 <button class="sub" type="submit">添加</button>
             </form>  
         </div>  
 
 
         <div class="login">  
-            <h1>获取授权码</h1>  
+            <h1 style="font-size:1.8rem">获取授权码</h1>  
+            <p style="color:red">授权码30天内有效！</p>
             <form method="post" action="javascript:xssqm()" id="form" name="form"> 
-                <input type="text" required="required" placeholder="获取个数" class="onlyNumAlpha" id="UID" name="UID" />
-                <input type="text" required="required" placeholder="校内学时" class="onlyNumAlpha" id="TI" name="TI" />
-                <input type="text" required="required" placeholder="校外学时" class="onlyNumAlpha" id="TS" name="TS" />
+                <input type="text" required="required" placeholder="获取个数" class="onlyNumAlpha" id="NUM" name="NUM" />
+                <input type="text" required="required" placeholder="校内学时" class="onlyNumAlpha" id="TIsqm" name="TIsqm" />
+                <input type="text" required="required" placeholder="校外学时" class="onlyNumAlpha" id="TSsqm" name="TSsqm" />
                 <button class="sub" type="submit">提交</button>
             </form>  
         </div>  
@@ -42,7 +43,7 @@
 <div class="login">  
         <h1 style="font-size:1.5rem">批量学时添加系统</h1>  
 	<p style="color:red">导入前必须备份学时表！</p>
-        <form action="javascript:xsaddpl" method="post" enctype="multipart/form-data">
+        <form action="javascript:xsaddpl()" method="post" enctype="multipart/form-data" id="upload_form" name="upload_form">
 			<label for="file">文件名：</label>
 			<input type="file" name="file" id="file"><br />
 			<button class="sub" type="submit">提交</button>
@@ -62,8 +63,8 @@
     var post=new FormData;
     var UID,TI,TO;
     UID=document.getElementById("UID").value;
-    TI=document.getElementById("TI").value;
-    TO=document.getElementById("TS").value;
+    TI=document.getElementById("TIadd").value;
+    TO=document.getElementById("TSadd").value;
     post.append("UID",UID);
     post.append("TI",TI);
     post.append("TS",TO);
@@ -74,6 +75,41 @@
                 document.getElementById("message").innerHTML=xhr.responseText;
             }
         }
+    }
+
+    function xssqm(){
+        var xhr=new XMLHttpRequest;
+        var post=new FormData;
+        var NUM,TI,TO;
+        NUM=document.getElementById("NUM").value;
+        TI=document.getElementById("TIsqm").value;
+        TO=document.getElementById("TSsqm").value;
+        post.append("NUM",NUM);
+        post.append("TI",TI);
+        post.append("TS",TO);
+        xhr.open("POST","sqm.php", true);
+        xhr.send(post);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                    //document.getElementById("message").innerHTML=xhr.responseText;
+                    alert(xhr.responseText);
+                }
+            }
+        }
+
+    function xsaddpl(){
+        var xhr=new XMLHttpRequest;
+        var post=new FormData;
+        doc = document.forms["upload_form"]["file"].files[0];
+        post.append("file",doc);
+        xhr.open("POST","/root/admin/app/xs/updoc.php", true);
+        xhr.send(post);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                   // document.getElementById("message").innerHTML=xhr.responseText;
+                    alert(xhr.responseText);
+                }
+            }
     }
     </script>
 
