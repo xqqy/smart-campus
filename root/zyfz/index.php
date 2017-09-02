@@ -13,7 +13,7 @@
  <div style="color:#fff">
 </div>
 
-<div style="color:white;font-size:1.5rem;margin-left:20px;height:10%"><h1>志愿者部系统</h1></div>
+<div style="color:white;font-size:1.5rem;margin-left:20px;height:10%"><h1>学时管理</h1></div>
 <div id="message" style="color:#fff"></div>
 <div style="position:absolute;top:20%;margin:50px;"> 
 

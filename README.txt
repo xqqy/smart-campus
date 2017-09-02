@@ -19,11 +19,11 @@ old是旧的文档，备用
 
 login密码：loginmyphp；打开MAIN库
 register密码：registerpswdbjsdfz；打开MAIN库
-zhtj密码：zhtjalwayswithyou；打开ZHTJ库
+push密码：5TPlpIGEX9Hy8xCC；打开PUSH库
 zyfz密码：zyfzalwayswithyou；打开ZYFZ库
 ative密码：activemakeourlifebetter；打开ATIVE库
 ativep密码：K3LKLv6tQkAaFLaa;打开ATIVEP库
-Ver2.0.4.3 MM豆
+Ver2.1.0.0 MM豆酒心更新
 
 Metro文档是目前使用的模板，详情见THANKS.txt
 

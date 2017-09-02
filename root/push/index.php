@@ -18,7 +18,7 @@ if ($con->connect_error){die("Could not connect!");}
 $sql = "select * from AUZN where UID='".$_COOKIE["UID"]."'";/*select things*/
 $result = $con->query($sql);
 $row =  $result->fetch_assoc();
-if($row['ZHTJ']!=1){die("您没有使用此程序的权限！");}
+if($row['PUSH']!=1){die("您没有使用此程序的权限！");}
 
 if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录(23)");}/*登录验证*/
         $sql = "SELECT * FROM ADMIN WHERE UID='".$_COOKIE["UID"]."'";

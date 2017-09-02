@@ -20,8 +20,11 @@
 </style>
 <body>
 <div class="small">
-<?php
-$con =new mysqli("localhost","zhtj","zhtjalwayswithyou","ZHTJ");/*connect mysql*/
+你的返回值是:0 <br />
+这个系统已经被废弃
+
+<?php/*
+$con =new mysqli("localhost","zhtj","zhtjalwayswithyou","ZHTJ");//connect mysql
 if ($con->connect_error)
   {
   die('Could not connect: ' . mysql_error());
@@ -44,7 +47,7 @@ $row =  $result->fetch_assoc();
 else{echo "未知返回值，请联系校团委";}
 
 $con->close()
-?>
+*/?>
 </meta>
 </div>
 </body>

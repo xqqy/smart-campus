@@ -56,84 +56,26 @@ daovoice('update');</script>
 <div style="position:absolute;top:10%;margin:50px;"> 
 
 
-<!--智慧团籍-->
-    <?php
-    if(empty($_COOKIE['UID'])){die("请先登录(61)");}
-
-$con =new mysqli("localhost","login","loginmyphp","MAIN");/*connect mysql*/
-if ($con->connect_error)
-  {
-  die('Could not connect: ' . mysql_error());
-  }
-$con->query('set names utf8');
-
-$tj =new mysqli("localhost","zhtj","zhtjalwayswithyou","ZHTJ");/*connect mysql*/
-if ($con->connect_error)
-  {
-  die('Could not connect: ' . mysql_error());
-  }
-$tj->query('set names utf8');
-
-if(!$_COOKIE["UID"]){echo "请先登录(77)";}else{
-$sql = "SELECT * FROM LOGIN WHERE UID=".$_COOKIE["UID"];
-$result = $con->query($sql);
-$row =  $result->fetch_assoc();
-if(!$_COOKIE["UID"] or $row['TOKEN']!=$_COOKIE['TOKEN']){echo "请先登录(81)";}else{//登录验证
-
-
-$sql = "SELECT * FROM ZHTJMAIN WHERE UID=".$_COOKIE["UID"];//查找
-$result = $tj->query($sql);
-$row =  $result->fetch_assoc();
-
-$num=$row['NUM'];
-
-$sql = "SELECT * FROM ZHTJRTUN WHERE NUM=".$num;//查看帮助信息
-$result=$tj->query($sql);
-$row =  $result->fetch_assoc();
-
-if($num!=0 and $num!=-1 and $num!=1){
-  echo '<div class="small">';
-
-
-	if($row['FASHION']==null){echo "未知返回值，请联系校团委<br />";
-  echo "你的返回值是:".$num;}//返回值
-
-else{
-if($num!=0){
-echo $row['FASHION'];
-}}
-
-}
-
-
-}}
-$con->close();
-$tj->close();
-if($num!=0 and $num!=-1 and $num!=1){echo '<p style="font-size:25px">感谢使用查询系统</p>';
-echo '<p style="font-size:15px">2017校团委组织部</p>';
-echo '</div>';}
-    ?>
-
-
 
 
 
 <div class="small"  >  <!--智慧学时-->
      <?php
-     if(empty($_COOKIE['UID'])){die("请先登录(123)");}
+     if(empty($_COOKIE['UID'])){die("请先登录(64)");}
 
 $con =new mysqli("localhost","login","loginmyphp","MAIN");/*connect mysql*/
 $zy =new mysqli("localhost","zyfz","zyfzalwayswithyou","ZYFZ");/*connect mysql*/
-if ($con->connect_error)
+if ($con->connect_error or $zy->connect_error)
   {
   die('Could not connect: ' . mysql_error());
   }
 $con->query('set names utf8');
-if(!$_COOKIE["UID"]){echo "请先登录(132)";}else{
+$zy->query('set names utf8');
+if(!$_COOKIE["UID"]){echo "请先登录(74)";}else{
 $sql = "SELECT * FROM LOGIN WHERE UID=".$_COOKIE["UID"];
 $result = $con->query($sql);
 $row =  $result->fetch_assoc();
-if( $row['TOKEN']!=$_COOKIE['TOKEN']){echo "请先登录(136)";}else{//登录验证
+if( $row['TOKEN']!=$_COOKIE['TOKEN']){die("请先登录(78)");}//登录验证
 
 $sql = "SELECT * FROM ZYFZMAIN WHERE UID=".$_COOKIE["UID"];//查询
 $result = $zy->query($sql);
@@ -142,7 +84,7 @@ $row =  $result->fetch_assoc();
   echo "你有".$row['TI']."校内学时". "<br /> 你有". $row['TS']."校外学时" ;//返回
   echo "<br />";
 
-}}
+}
 $con->close();
 ?>       
 <p style="font-size:25px">感谢使用查询系统</p>
@@ -152,25 +94,35 @@ $con->close();
 
 <!--未完成的推送系统-->
 <?php 
-  class SMALL/*是时候面向对象了！*/{
-                var $msgid;
-                var $name;
-                var $info; /*设置每个磁铁的标题和信息*/
+$con =new mysqli("localhost","push","5TPlpIGEX9Hy8xCC","PUSH");/*connect mysql*/
+if ($con->connect_error){die("Could not connect!");}
+$con->query('set names utf8');
 
-                function PRINT(){
-                        echo "<div class='small'>".'<a href="active.php?ATID='. $this->atid .'">';/*设置为链接模式，get方法传递参数*/
-                        echo "<p style='font-size:40px;'>".$this->name."</p>";/*输出title*/
-                        echo "<p style='font-size:25px;'>".$this->info."</p>";/*输出帮助*/
+$sql="SELECT * FROM `PUSHMAIN` WHERE UID='".$_COOKIE['UID']."'";
+$result=$con->query($sql);
+$row =  $result->fetch_assoc();
+$message=str_getcsv($row['NUM']);//获取为CSV行
+$t=0;
+$a=count($message);
+while($t<$a){
+    $sql="SELECT * FROM `PUSHMSGE` WHERE NUM='".$message[$t]."'";
+    $result=$con->query($sql);
+    $row =  $result->fetch_assoc();
+    if(!empty($row)){small($row);}
+    $t+=1;
+}
+
+
+                function small($row){
+                        echo "<div class='small'>";
+                        if($row['LINK']){echo "<a href='".$row['LINK']."'>";}
+                        echo "<p style='font-size:40px;'>".$row['TITLE']."</p>";/*输出title*/
+                        echo "<p style='font-size:25px;'>".$row['INFO']."</p>";/*输出内容*/
                         echo"</a></div>";
                 }
 
-                function __construct($row){
-                        $this->atid=$row['ATID'];
-                        $this->name=$row['NAME'];
-                        $this->info=$row['INFO'];
-                }
                 
-        }
+
         ?>
 
 </div>

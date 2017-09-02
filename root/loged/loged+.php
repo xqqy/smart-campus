@@ -63,15 +63,15 @@ if($row['ZYFZ']==1){
                 echo '<li class="">
                     <div class="menu-abs-bg background-color"></div>
                     <div class="services-icon menu-specs">
-                        <a href="/root/zyfz/index.php" target="showframe">志愿者系统</a>
+                        <a href="/root/zyfz/index.php" target="showframe">学时管理</a>
                         <!--<span>更改密码、设置旧学号、个人信息……</span>-->
                     </div>
                 </li>';}
-if($row['ZHTJ']==1){
+if($row['PUSH']==1){
             echo '<li class="">
                     <div class="menu-abs-bg background-color"></div>
                     <div class="services-icon menu-specs">
-                        <a href="/root/zhtj/info.php" target="showframe">组织部系统</a>
+                        <a href="/root/push/index.php" target="showframe">推送</a>
                         <!--<span>更改密码、设置旧学号、个人信息……</span>-->
                     </div>
                 </li>';}?>
@@ -79,7 +79,7 @@ if($row['ZHTJ']==1){
                 <li class="">
                     <div class="menu-abs-bg background-color"></div>
                     <div class="home-icon menu-specs">
-                        <a href="/root/active/index.php" target="showframe" title="设置活动">活动系统</a>
+                        <a href="/root/active/index.php" target="showframe" title="设置活动">活动</a>
                         <!--<span>志愿者学时、团籍信息……</span>-->
                     </div>
                 </li>
