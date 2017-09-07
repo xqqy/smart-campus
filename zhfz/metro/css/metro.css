@@ -162,25 +162,25 @@ a {
   }
 }
 @font-face {
-  font-family: "PT Serif Caption";
+
   font-style: normal;
   font-weight: 400;
   src: local("Cambria"), local("PT Serif Caption"), local("PTSerif-Caption"), url(https://themes.googleusercontent.com/static/fonts/ptserifcaption/v6/7xkFOeTxxO1GMC1suOUYWWhBabBbEjGd1iRmpyoZukE.woff) format('woff');
 }
 @font-face {
-  font-family: "Open Sans Light";
+
   font-style: normal;
   font-weight: 300;
   src: local("Segoe UI Light"), local("Open Sans Light"), local("OpenSans-Light"), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/DXI1ORHCpsQm3Vp6mXoaTZ1r3JsPcQLi8jytr04NNhU.woff) format('woff');
 }
 @font-face {
-  font-family: "Open Sans";
+
   font-style: normal;
   font-weight: 400;
   src: local("Segoe UI"), local("Open Sans"), local("OpenSans"), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/K88pR3goAWT7BTt32Z01mz8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
 }
 @font-face {
-  font-family: "Open Sans Bold";
+
   font-style: normal;
   font-weight: 700;
   src: local("Segoe UI Bold"), local("Open Sans Bold"), local("OpenSans-Bold"), url(https://themes.googleusercontent.com/static/fonts/opensans/v8/k3k702ZOKiLJc3WVjuplzJ1r3JsPcQLi8jytr04NNhU.woff) format('woff');
@@ -189,7 +189,7 @@ html {
   font-size: 100%;
 }
 body {
-  font-family: "Segoe UI", "Open Sans", sans-serif, serif;
+
   font-size: 0.875rem;
   line-height: 1.1;
   font-weight: 400;
@@ -6051,7 +6051,7 @@ div.square-button.big-button {
 .input-control textarea {
   position: relative;
   min-height: 6.25rem;
-  font-family: "Segoe UI", "Open Sans", sans-serif, serif;
+
 }
 .input-control.textarea {
   height: auto;
@@ -9115,7 +9115,7 @@ input[type="submit"].link:active {
   padding: .3em 10px;
   color: #fff;
   font-weight: bold;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+
   font-size: .9em;
   text-align: center;
 }

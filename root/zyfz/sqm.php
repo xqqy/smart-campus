@@ -33,4 +33,8 @@
          }
 if(!$resultdo){echo "<br />一个代码生成失败";}else{echo "<br />".$rand;}
      }
+     $outdate=time()-2592000;
+     $sql="DELETE FROM `ZYFZSQM` WHERE DATE<".$outdate;
+     $result=$xs->query($sql);
+     if(!$result){echo "授权码超时删除失败！（39）";}
      ?>

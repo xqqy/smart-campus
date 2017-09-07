@@ -15,7 +15,7 @@ if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录(4)");}/
 
                       $outdate=time()-2592000;
                       $sql="DELETE FROM `ZYFZSQM` WHERE DATE<".$outdate;
-                      $xs->query($sql);
+                      $sqmdel=$xs->query($sql);
 
                         $sql = "select * from ZYFZMAIN where UID='".$_COOKIE['UID']."'";/*select things*/
                         $result = $xs->query($sql);
@@ -49,6 +49,7 @@ if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录(4)");}/
                         if($result){echo $_COOKIE['UID']."增加校内学时".$sqm['TI']."增加校外学时". $sqm['TS'];}else{echo "ERROR(49)";}
                         if(!$resultdo){echo "无法保存更改记录！(50)";}
                         if(!$resultdel){echo "未知错误，请联系校团委（51）";}
+                        if(!$resultdel){echo "未知错误，请联系校团委（52）";}
 
                         $sql="DELETE FROM `ZYFZSQM` WHERE DATE<".time()-2592000;
                         $xs->query($sql);
