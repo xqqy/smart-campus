@@ -73,6 +73,7 @@
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
                 document.getElementById("message").innerHTML=xhr.responseText;
+                window.setTimeout('document.getElementById("message").innerHTML="";',1000);
             }
         }
     }

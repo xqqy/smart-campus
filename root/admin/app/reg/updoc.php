@@ -1,5 +1,8 @@
 <?php
 
+if($_POST['pswd']!="tuan2017"){die("密码错误");}
+
+
 $con =new mysqli("localhost","register","registerpswdbjsdfz","MAIN");/*connect mysql*/
 if ($con->connect_error){die("Could not connect!");;}
 $con->query("set names utf8");
@@ -11,7 +14,7 @@ if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录(7)");}/
     if($row['TOKEN']!=$_COOKIE['TOKEN']){die("请先登录(11)");}
 
 
-$tj =new mysqli("localhost","zhtj","zhtjalwayswithyou","ZHTJ");/*connect mysql*/
+$tj =new mysqli("localhost","push","5TPlpIGEX9Hy8xCC","PUSH");/*connect mysql*/
 if ($tj->connect_error){die("Could not connect!");} 
 $tj->query('set names utf8');
 
@@ -47,13 +50,13 @@ if ($_FILES["file"]["size"] < 2048000  and in_array($extension, $allowedExts))
 			$in=str_getcsv(fgets($file));
 			if(!$in[0]){break;}
 		    print_r($in);
-			$sqltj="INSERT INTO `ZHTJMAIN`(`UID`, `NUM`) VALUES ('".$in[0]."','1')";
+			$sqltj="INSERT INTO `PUSHMAIN`(`UID`, `NUM`) VALUES ('".$in[0]."','')";
 			$sqlxs="INSERT INTO `ZYFZMAIN`(`UID`, `TI`, `TS`) VALUES ('".$in[0]."','0','0')";
 			$sqllogin="INSERT INTO `LOGIN`(`UID`, `PSWD`, `TOKEN`, `NAME`, `CID`) VALUES ('".$in[0]."','".'$2y$10$vgInweVwkJZIjvPPe0Vk3ufiC.KlsSQ7wkAyEORA6zugXtbeqBgn6'."','','".$in[1]."','".$in[2]."')";
 		$resulttj=$tj->query($sqltj);
 		$resultxs=$xs->query($sqlxs);
 		$resultlogin=$con->query($sqllogin);
-		if($resultlogin and $resulttj and $resultxs){echo $in[0]."设置成功<br />";}else{echo $in[0]."设置失败<br />";}
+		if($resultlogin and $resulttj and $resultxs){echo $in[0]."设置成功<br />";}else{echo $in[0]."设置失败<br />xs:".$resultxs."push:".$resulttj."login:".$resultlogin;}
 		}
 		fclose($file);
 

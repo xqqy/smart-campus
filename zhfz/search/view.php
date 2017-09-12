@@ -32,12 +32,12 @@ body{
 <head>  
     <meta charset="UTF-8"> 
     <title>志愿附中</title>
-
+ 
 <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/96c356a7.js","daovoice")</script>
 
 <body>
 <script>daovoice('init', {
-  app_id: "96c356a7",
+  app_id: "1f3d8ed1",
   user_id: "<?php echo $_COOKIE['UID'] ?>", // 必填: 该用户在您系统上的唯一ID
   name: <?php $con =new mysqli("localhost","login","loginmyphp","MAIN");/*connect mysql*/
 	if ($con->connect_error){die("Could not connect!");}
@@ -92,11 +92,15 @@ $con->close();
 </div>
 
 
-<!--未完成的推送系统-->
 <?php 
 $con =new mysqli("localhost","push","5TPlpIGEX9Hy8xCC","PUSH");/*connect mysql*/
 if ($con->connect_error){die("Could not connect!");}
 $con->query('set names utf8');
+
+
+$outdate=time()-604800;
+$sql="DELETE FROM `PUSHMSGE` WHERE `TIME`<'".$outdate."'";
+$con->query($sql);
 
 $sql="SELECT * FROM `PUSHMAIN` WHERE UID='".$_COOKIE['UID']."'";
 $result=$con->query($sql);
@@ -108,10 +112,24 @@ while($t<$a){
     $sql="SELECT * FROM `PUSHMSGE` WHERE NUM='".$message[$t]."'";
     $result=$con->query($sql);
     $row =  $result->fetch_assoc();
-    if(!empty($row)){small($row);}
-    $t+=1;
+    if($row['TITLE']){
+      small($row);
+      $t+=1;
+    }
+    else{
+      array_splice($message,$t,1);
+      $a=count($message);
+    }
 }
-
+$nmsg="";
+$t=0;
+while($t<$a){
+  $nmsg.=',"'.$message[$t].'"';
+  $t+=1;
+}
+$nmsg=substr($nmsg,1);
+$sql="UPDATE `PUSHMAIN` SET `NUM`='".$nmsg."' WHERE `UID`='".$_COOKIE['UID']."'";
+$con->query($sql);
 
                 function small($row){
                         echo "<div class='small'>";

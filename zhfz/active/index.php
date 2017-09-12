@@ -76,7 +76,7 @@ if($result){
 } ?>
 </div>
 <script>daovoice('init', {
-  app_id: "96c356a7",
+  app_id: "1f3d8ed1",
   user_id: "<?php echo $_COOKIE['UID'] ?>", // 必填: 该用户在您系统上的唯一ID
   name: <?php $con =new mysqli("localhost","login","loginmyphp","MAIN");/*connect mysql*/
 	if ($con->connect_error){die("Could not connect!");}

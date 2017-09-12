@@ -32,7 +32,7 @@ if($row['TOKEN']!=$_COOKIE['TOKEN']){die("请先登录(27)");}
 <div style="position:absolute;top:20%;margin:50px;"> 
         <div class="login">
             <h1>发送推送</h1>
-            <p style="color:red">通知七天内有效！可以用逗号分割来向多个同学发送通知，push指令用于批量发送通知</p>
+            <p style="color:red">通知七天内有效！</p><!--可以用逗号分割来向多个同学发送通知，push指令用于批量发送通知-->
             <form method="post" action="javascript:push()">
             <button class="sub" type="submit">确定</button>
                 <input type="text" required="required" placeholder="UID" name="UID" id="UID"></input>
@@ -66,6 +66,7 @@ function push(){
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
                 document.getElementById("message").innerHTML=xhr.responseText;
+                window.setTimeout('document.getElementById("message").innerHTML="";',1000);
             }
         }
     }

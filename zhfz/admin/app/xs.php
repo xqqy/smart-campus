@@ -40,7 +40,7 @@ if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录(4)");}/
 
                         $t=0;
                         $resultdo=false;
-                        while(!$resultdo and $t<1000000){
+                        while(!$resultdo and $t<1000){
                             $sql="INSERT INTO ZYFZHSOY(UID,DATE,OTI,OTS,CTI,CTS,OTOR,RND) VALUES ('".$_COOKIE['UID']."','".date('Y-m-d H:i:s',time())."','".$ti."','".$ts."','".$sqm['TI']."','".$sqm['TS']."','".$sqm['OTOR']."-".$_COOKIE['ADD']."','".mt_rand()."')";
                         $resultdo = $xs->query($sql);/*保存记录*/}
 

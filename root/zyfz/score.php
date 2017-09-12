@@ -50,7 +50,7 @@ $sql = "UPDATE ZYFZMAIN SET TI='" . $nti . "',TS='" . $nts . " 'WHERE UID='" . $
 $result = $xs->query($sql);
 $t = 0;
 $resultdo = false;
-while (!$resultdo and $t < 1000000) {
+while (!$resultdo and $t < 1000) {
     $sql = "INSERT INTO ZYFZHSOY(UID,DATE,OTI,OTS,CTI,CTS,OTOR,RND) VALUES ('" . $_POST['UID'] . "','" . date('Y-m-d H:i:s', time()) . "','" . $ti . "','" . $ts . "','" . $_POST['TI'] . "','" . $_POST['TS'] . "','" . $_COOKIE['UID'] . "','" . mt_rand() . "')";
     $resultdo = $xs->query($sql);
     /*保存记录*/

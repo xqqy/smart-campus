@@ -3,6 +3,7 @@
     <!DOCTYPE html>  
     <html>  
     <head>  
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/96c356a7.js","daovoice")</script>
 
         <meta charset="UTF-8">  
         <title>更改密码</title>  
@@ -13,12 +14,12 @@
     </head> 
  
     <body>  
-<script>daovoice('init', {
-  app_id: "96c356a7",
-  user_id: <?php echo $_COOKIE['UID'] ?>, // 必填: 该用户在您系统上的唯一ID
+    <script>daovoice('init', {
+  app_id: "1f3d8ed1",
+  user_id: "<?php echo $_COOKIE['UID'] ?>", // 必填: 该用户在您系统上的唯一ID
   name: <?php $con =new mysqli("localhost","login","loginmyphp","MAIN");/*connect mysql*/
-	if ($conn->connect_error){die("Could not connect!");}
-if(!$_COOKIE["UID"]){echo "请先登录(21)";}else{
+	if ($con->connect_error){die("Could not connect!");}
+if(!$_COOKIE["UID"]){die();}else{
 	$con->query('set names utf8'); 
 		$sql = "SELECT * FROM LOGIN WHERE UID=".$_COOKIE["UID"];
 		$result = $con->query($sql);

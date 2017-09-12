@@ -25,7 +25,7 @@
          $n-=1;
          $resultdo=false;
          $t=0;
-         while($t<1000000 and !$resultdo){
+         while($t<1000 and !$resultdo){
             $rand=mt_rand();
             $sql="INSERT INTO `ZYFZSQM`(`SQM`, `TI`, `TS`,`OTOR`,`DATE`) VALUES ('".$rand."','".$ti."','".$ts."','".$_COOKIE['UID']."','".time()."')";
             $resultdo=$xs->query($sql);

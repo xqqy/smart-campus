@@ -1,19 +1,11 @@
 <!DOCTYPE html>
 <html>
 
-<script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/96c356a7.js","daovoice")</script>
 
 <head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Metro, a sleek, intuitive, and powerful framework for faster and easier web development for Windows Metro Style.">
-    <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, metro, front-end, frontend, web development">
-    <meta name="author" content="Sergey Pimenov and Metro UI CSS contributors">
-
+    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/1f3d8ed1.js","daovoice")</script>
     <title>Login</title>
-
     <link href="metro/css/metro.css" rel="stylesheet">
     <link href="metro/css/metro-icons.css" rel="stylesheet">
     <link href="metro/css/metro-responsive.css" rel="stylesheet">
@@ -73,7 +65,7 @@
 
 <script>
 daovoice('init', {
-  app_id: "96c356a7"
+    app_id: "1f3d8ed1",
 });
 daovoice('update');</script>
 

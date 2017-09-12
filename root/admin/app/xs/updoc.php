@@ -51,7 +51,7 @@ if ($_FILES["file"]["size"] < 2048000  and in_array($extension, $allowedExts))
 		
 		$t=0;
 		$resultdo=false;
-		while(!$resultdo and $t<1000000){
+		while(!$resultdo and $t<1000){
 		$sql="INSERT INTO ZYFZHSOY(UID,DATE,OTI,OTS,CTI,CTS,OTOR,RND) VALUES ('".$in[0]."','".date('Y-m-d h:i:s',time())."','".$ti."','".$ts."','".$in[1]."','".$in[2]."','".$_COOKIE['UID']."','".mt_rand()."')";
 		$resultdo = $xs->query($sql);/*保存记录*/}
 
