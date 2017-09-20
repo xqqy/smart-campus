@@ -12,7 +12,7 @@
 		height: 20rem;
 		width: 20rem;
 		background-color:#A1A0A3;
-		font-family:Adobe Heiti Std R;
+		
 		font-size:2rem;
 		text-decoration: none; 
 		text-align: center;

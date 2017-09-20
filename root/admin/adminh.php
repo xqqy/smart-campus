@@ -5,7 +5,7 @@
     <head>  
 
         <meta charset="UTF-8">  
-        <title>更改密码</title>  
+        <title>设置</title>  
         <link rel="stylesheet" type="text/css" href="admin.css"/>
 
 <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/96c356a7.js","daovoice")</script>
@@ -17,8 +17,7 @@
 <div style="color:white;font-size:1.5rem;margin-left:20px;heigh:10%"><h1>设置</h1></div>
 
 
-<div style="top:10%;height:90%">
-
+<div style="float:left;">
         <div class="login">  
             <h1>更改密码</h1>  
             <form method="post" id="form">  
@@ -92,6 +91,7 @@ $con->close();}
         opswd.value=sha512(opswd.value);
         apswd.value=sha512(apswd.value);
         document.getElementById("form").submit();}
+        return;
     }
 </script>
     </body>

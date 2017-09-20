@@ -1,11 +1,7 @@
 <!DOCTYPE html>
-<html class="csstransforms csstransforms3d csstransitions" lang="en"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<html ><head>
     <meta charset="utf-8">
-    <title>智慧附中系统</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <title>智慧团委系统</title>
 
     <script src="/zhfz/metro/js/jquery.js"></script>
 
@@ -19,30 +15,11 @@
     
     <link href="/zhfz/metro/css/reset.css" rel="stylesheet">
     <link href="/zhfz/metro/css/grid.css" rel="stylesheet">
-    <link href="/zhfz/metro/css/nivo.css" rel="stylesheet">
     <link href="/zhfz/metro/css/custom.css" rel="stylesheet">
-
-<link href="/zhfz/metro/css/metro.css" rel="stylesheet">
-    <link href="/zhfz/metro/css/metro-icons.css" rel="stylesheet">
-    <link href="/zhfz/metro/css/metro-responsive.css" rel="stylesheet">
-    <link href="/zhfz/metro/css/metro-schemes.css" rel="stylesheet">
-
-    <link href="/zhfz/metro/css/docs.css" rel="stylesheet">
-
-    
-    <link rel="stylesheet" type="text/css" href="/zhfz/metro/css/prettify.css">
-    
 
 </head>
 
-<body style="visibility: visible;">
-
-<div id="page_wrap">
-
-    <header>
-
-
-        <nav>
+<body >
 
             <ul id="menu">
                 <li class="">
@@ -62,7 +39,7 @@ $row =  $result->fetch_assoc();
 if($row['ZYFZ']==1){
                 echo '<li class="">
                     <div class="menu-abs-bg background-color"></div>
-                    <div class="services-icon menu-specs">
+                    <div class="clients-w menu-specs">
                         <a href="/root/zyfz/index.php" target="showframe">学时管理</a>
                         <!--<span>更改密码、设置旧学号、个人信息……</span>-->
                     </div>
@@ -70,7 +47,7 @@ if($row['ZYFZ']==1){
 if($row['PUSH']==1){
             echo '<li class="">
                     <div class="menu-abs-bg background-color"></div>
-                    <div class="services-icon menu-specs">
+                    <div class="connection-w menu-specs">
                         <a href="/root/push/index.php" target="showframe">推送</a>
                         <!--<span>更改密码、设置旧学号、个人信息……</span>-->
                     </div>
@@ -78,36 +55,26 @@ if($row['PUSH']==1){
 
                 <li class="">
                     <div class="menu-abs-bg background-color"></div>
-                    <div class="home-icon menu-specs">
+                    <div class="blog-icon menu-specs">
                         <a href="/root/active/index.php" target="showframe" title="设置活动">活动</a>
                         <!--<span>志愿者学时、团籍信息……</span>-->
                     </div>
                 </li>
     </ul><!-- Menu ENDS -->
 
-        </nav><!-- Nav ENDS -->
 
         
 
-    </header><!-- Left Side ENDS -->
 
 
 
 
-<div id="toTop" style="display: none;"></div>
 
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="/zhfz/metro/js/isotope.js"></script>
-<script src="/zhfz/metro/js/caroufredsel.js"></script>
-<script src="/zhfz/metro/js/nivo.js"></script>
+
 <script src="/zhfz/metro/js/jquery_002.js"></script>
-<script src="/zhfz/metro/js/tinyscrollbar.js"></script>
 <script src="/zhfz/metro/js/custom.js"></script>
-<script async="" src="/zhfz/metro/js/analytics.js"></script>
 <script src="/zhfz/metro/js/jquery-2.js"></script>
-<script src="/zhfz/metro/js/metro.js"></script>
-<script src="/zhfz/metro/js/docs.js"></script>
-<script src="/zhfz/metro/js/ga.js"></script>
-<script async="" src="s_files/adsbygoogle.js"></script>
+
 
 </body></html>

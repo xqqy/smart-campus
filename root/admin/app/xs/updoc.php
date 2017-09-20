@@ -40,7 +40,8 @@ if ($_FILES["file"]["size"] < 2048000  and in_array($extension, $allowedExts))
 
 		$sql = "select * from ZYFZMAIN where UID='".$in[0]."'";/*select things查找原学时*/
                         $result = $xs->query($sql);
-                        $row =  $result->fetch_assoc();
+						$row =  $result->fetch_assoc();
+						if(!$row['TI'] or !$row['TS']){echo "<br />".$in[0]."查无此人";}else{
                         $ti=$row['TI'];
                         $ts=$row['TS'];
 		$nti=$ti+$in[1];
@@ -56,8 +57,8 @@ if ($_FILES["file"]["size"] < 2048000  and in_array($extension, $allowedExts))
 		$resultdo = $xs->query($sql);/*保存记录*/}
 
 		if($resultadd){echo "<br />".$in[0]."设置成功";}else{echo "<br />".$in[0]."设置失败(66)";}
-		}
-		if(!$resultdo){echo $in[0]."更改记录保存失败(68)";}
+		if(!$resultdo){echo $in[0]."更改记录保存失败(60)";}		
+		}}
 		fclose($file);
 
 			}

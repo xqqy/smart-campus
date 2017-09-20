@@ -108,6 +108,7 @@ $con->close();}
         opswd.value=sha512(opswd.value);
         apswd.value=sha512(apswd.value);
         document.getElementById("form").submit();}
+        return;
     }
 </script>
     </body>

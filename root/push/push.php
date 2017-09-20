@@ -7,7 +7,8 @@ $push = new mysqli("localhost", "push", "5TPlpIGEX9Hy8xCC", "PUSH");
 if ($push->connect_error) {
     die("Could not connect!(29)");
 }
-
+$push->query('set names utf8');
+$con->query('set names utf8');
 
 $sql = "select * from AUZN where UID='".$_COOKIE["UID"]."'";/*select things*/
 $result = $con->query($sql);

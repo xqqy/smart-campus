@@ -359,7 +359,7 @@ h6 .small {
   font-weight: 300;
 }
 .text-ellipsis {
-  overflow: hidden;
+  
   white-space: nowrap;
   text-overflow: ellipsis;
 }
@@ -445,7 +445,7 @@ dl dd {
 dl.horizontal dt {
   float: left;
   width: 10rem;
-  overflow: hidden;
+  
   clear: left;
   text-align: right;
   text-overflow: ellipsis;
@@ -767,7 +767,7 @@ a.tag {
   padding-bottom: 56.25%;
   padding-top: 30px;
   height: 0;
-  overflow: hidden;
+  
 }
 .video-container iframe,
 .video-container object,
@@ -3044,7 +3044,7 @@ a.tag {
   padding: 0;
   height: 1px;
   margin: 0 1px;
-  overflow: hidden;
+  
   background-color: #f2f2f2;
 }
 .v-menu .divider:hover {
@@ -3212,7 +3212,7 @@ a.tag {
   padding: 0;
   height: 1px;
   margin: 0 1px;
-  overflow: hidden;
+  
   background-color: #f2f2f2;
 }
 .d-menu .divider:hover {
@@ -5836,7 +5836,7 @@ div.square-button.big-button {
   margin: 0.625rem 0;
   padding: 0;
   list-style: none;
-  overflow: hidden;
+  
   width: 100%;
 }
 .breadcrumbs2 li {
@@ -7061,7 +7061,7 @@ input[type="submit"].link:active {
   height: auto;
   margin: .625rem 0;
   background: #eeeeee;
-  overflow: hidden;
+  
 }
 .progress:before,
 .progress-bar:before,
@@ -7479,7 +7479,7 @@ input[type="submit"].link:active {
   left: 0;
   right: 0;
   opacity: 0;
-  overflow: hidden;
+  
   font-size: .875rem;
   line-height: 1rem;
   padding: 1em 1.5em;
@@ -7527,12 +7527,12 @@ input[type="submit"].link:active {
   top: 1em;
 }
 .image-container.diamond {
-  overflow: hidden;
+  
 }
 .image-container.diamond .frame {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
-  overflow: hidden;
+  
 }
 .image-container.diamond .frame img,
 .image-container.diamond .frame .image-replacer {
@@ -9430,7 +9430,7 @@ input[type="submit"].link:active {
 }
 .wizard2 .step-content {
   width: auto;
-  overflow: hidden;
+  
   padding: .625rem;
 }
 .wizard2 .step.prev .step-content,
@@ -9707,7 +9707,7 @@ input[type="submit"].link:active {
   padding: 0;
   height: 1px;
   margin: 0 1px;
-  overflow: hidden;
+  
   background-color: #f2f2f2;
 }
 .sidebar2 .divider:hover {
@@ -10197,7 +10197,7 @@ input[type="submit"].link:active {
   font-weight: bold;
   position: relative;
   border: 1px #eeeeee solid;
-  overflow: hidden;
+  
   z-index: 2;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -10288,7 +10288,7 @@ input[type="submit"].link:active {
   width: 100%;
   position: relative;
   min-height: 100px;
-  overflow: hidden;
+  
 }
 .carousel .slide {
   top: 0;
@@ -10504,7 +10504,7 @@ input[type="submit"].link:active {
 .rating .star.half:after {
   z-index: 3;
   width: 8px;
-  overflow: hidden;
+  
 }
 .rating.poor .star.on {
   color: #ce352c;
@@ -10774,7 +10774,7 @@ input[type="submit"].link:active {
   height: 100%;
   position: relative;
   padding: 120px 80px 0 0;
-  overflow: hidden;
+  
 }
 .tile-area:before,
 .tile-area:after {
@@ -10858,7 +10858,7 @@ input[type="submit"].link:active {
   box-shadow: inset 0 0 1px #FFFFCC;
   cursor: pointer;
   position: relative;
-  overflow: hidden;
+  
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -10907,7 +10907,7 @@ input[type="submit"].link:active {
   box-shadow: inset 0 0 1px #FFFFCC;
   cursor: pointer;
   position: relative;
-  overflow: hidden;
+  
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -11041,7 +11041,7 @@ input[type="submit"].link:active {
   box-shadow: inset 0 0 1px #FFFFCC;
   cursor: pointer;
   position: relative;
-  overflow: hidden;
+  
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -11176,7 +11176,7 @@ input[type="submit"].link:active {
   box-shadow: inset 0 0 1px #FFFFCC;
   cursor: pointer;
   position: relative;
-  overflow: hidden;
+  
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -11312,7 +11312,7 @@ input[type="submit"].link:active {
   box-shadow: inset 0 0 1px #FFFFCC;
   cursor: pointer;
   position: relative;
-  overflow: hidden;
+  
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -11448,7 +11448,7 @@ input[type="submit"].link:active {
   box-shadow: inset 0 0 1px #FFFFCC;
   cursor: pointer;
   position: relative;
-  overflow: hidden;
+  
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -11584,7 +11584,7 @@ input[type="submit"].link:active {
   box-shadow: inset 0 0 1px #FFFFCC;
   cursor: pointer;
   position: relative;
-  overflow: hidden;
+  
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -11752,7 +11752,7 @@ input[type="submit"].link:active {
   left: 0;
   width: 100%;
   height: inherit;
-  overflow: hidden;
+  
   display: none;
 }
 .tile-content:first-child {
@@ -11765,7 +11765,7 @@ input[type="submit"].link:active {
   top: 0;
   left: 0;
   display: none;
-  overflow: hidden;
+  
 }
 .tile-content .live-slide:nth-child(1) {
   display: block;
@@ -12560,7 +12560,7 @@ input[type="submit"].link:active {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  
   display: block;
 }
 .act {
@@ -12800,7 +12800,7 @@ input[type="submit"].link:active {
   width: 100%;
   display: block;
   color: inherit;
-  overflow: hidden;
+  
   white-space: nowrap;
   text-overflow: ellipsis;
 }
@@ -13375,7 +13375,7 @@ p [data-hint] {
   background-color: #e3c800;
 }
 .preloader-metro {
-  overflow: hidden;
+  
   position: relative;
   width: 100%;
   height: 10px;
@@ -13430,7 +13430,7 @@ p [data-hint] {
   position: relative;
   width: 40px;
   height: 40px;
-  overflow: hidden;
+  
   -webkit-transform-origin: bottom left;
           transform-origin: bottom left;
   -webkit-animation: ani-shrink 1s linear infinite;
@@ -13483,7 +13483,7 @@ p [data-hint] {
   width: 64px;
   height: 64px;
   position: relative;
-  overflow: hidden;
+  
 }
 .preloader-cycle .cycle {
   display: block;
@@ -13668,7 +13668,7 @@ p [data-hint] {
   position: relative;
   display: block;
   width: 100%;
-  overflow: hidden;
+  
 }
 .streamer .streamer-toolbar .toolbar-button {
   display: block;
@@ -13687,7 +13687,7 @@ p [data-hint] {
   margin: 0;
   padding: 0;
   display: block;
-  overflow: hidden;
+  
 }
 .streamer .meter li {
   display: block;
@@ -13736,7 +13736,7 @@ p [data-hint] {
 }
 .streamer .events {
   padding-left: 143px;
-  overflow: hidden;
+  
   height: 100%;
   min-height: 100%;
   overflow-x: scroll;
@@ -13753,7 +13753,7 @@ p [data-hint] {
 .streamer .events .events-area {
   height: 100%;
   min-height: 100%;
-  overflow: hidden;
+  
 }
 .streamer .events .events-area:before,
 .streamer .events .events-area:after {
@@ -13803,7 +13803,7 @@ p [data-hint] {
   margin: 0 2px 2px 0;
   cursor: pointer;
   position: relative;
-  overflow: hidden;
+  
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -13830,7 +13830,7 @@ p [data-hint] {
   position: absolute;
   left: 0;
   top: 0;
-  overflow: hidden;
+  
   display: none;
 }
 .streamer .events .event-stream .event .event-content:first-child {
@@ -14548,7 +14548,7 @@ video::-webkit-media-controls-enclosure {
   display: block;
   padding-left: 8px;
   padding-right: 20px;
-  overflow: hidden;
+  
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -14565,7 +14565,7 @@ video::-webkit-media-controls-enclosure {
 }
 .select2-container .select2-selection--multiple .select2-selection__rendered {
   display: inline-block;
-  overflow: hidden;
+  
   padding-left: 8px;
   text-overflow: ellipsis;
   white-space: nowrap;

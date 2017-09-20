@@ -21,13 +21,13 @@
         	width: 300px;   
         	height: 300px;   
 		box-shadow:0px 10px 20px /*#c0c3ff*/;
-		font-family:Adobe Heiti Std R;
+		
 		font-size:40px;
 		text-decoration: none;}
 body{   
         width: 100%;   
         height: 100%;   
-        font-family: 'Open Sans',sans-serif;   
+           
         margin: 0;   
         background-color: #7100c8/*7479e0*/;   
     }   

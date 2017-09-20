@@ -54,11 +54,12 @@ hr              { display: block; height: 1px;
 .drupal-icon    {background-image: url("icons/drupal.png");         background-repeat: no-repeat}
 .doc-list-icon  {background-image: url("icons/doc-list.png");       background-repeat: no-repeat}
 .connection-w   {background-image: url("icons/connection-w.png");   background-repeat: no-repeat}
-.grid           {background-image: url("icons/grid.png");           background-repeat: no-repeat}
+.grid-icon      {background-image: url("icons/grid.png");           background-repeat: no-repeat}
 .tag-cloud      {background-image: url("icons/tag-cloud.png");      background-repeat: no-repeat}
 .faq            {background-image: url("icons/faq.png");            background-repeat: no-repeat}
 .title-icon     {background-image: url("icons/title.png");          background-repeat: no-repeat}
 .magnifier      {background-image: url("icons/magnifier.png");      background-repeat: no-repeat}
+.clients-w      {background-image: url("icons/clients-w.png");      background-repeat: no-repeat}
 
 .to-left-icon-db {background-image: url("icons/to-left-arrow-double.png");  background-repeat: no-repeat}
 .to-right-icon-db{background-image: url("icons/to-right-arrow-double.png"); background-repeat: no-repeat}
@@ -78,7 +79,7 @@ hr              { display: block; height: 1px;
     float: left;
     background: #161719;
     position: relative;
-    overflow: hidden;
+    
 }
 
 /**
@@ -467,7 +468,7 @@ nav{
             width: 19.8%;
             margin: 0 0.2% 0.2% 0;
             position: relative;
-            overflow: hidden;
+            
         }
 
         .carousel .item img{
@@ -1115,7 +1116,7 @@ nav{
             margin: 20px 0;
             background: #F3F5F5;
             border-bottom: 4px solid #4C5050;
-            overflow: hidden;
+            
         }
 
         .comments-nav{
@@ -1400,7 +1401,7 @@ nav{
         .openable{
             width: 0;
             padding-left: 35px;
-            overflow: hidden;
+            
             -webkit-transition: width ease 0.5s;
             -moz-transition: width ease 0.5s;
             -ms-transition: width ease 0.5s;
@@ -1544,7 +1545,7 @@ nav{
             float: left;
             width: 100%;
             position: relative;
-            overflow: hidden;
+            
         }
 
         .portfolio-img{
@@ -1763,7 +1764,7 @@ nav{
             float: left;
             width: 100%;
             height: 455px;
-            overflow: hidden;
+            
         }
 
         .col{
@@ -1778,7 +1779,7 @@ nav{
             z-index: 1;
             margin-right: 5px;
             margin-bottom: 5px;
-            overflow: hidden;
+            
             height: 210px;
         }
 
@@ -1799,7 +1800,7 @@ nav{
             top: 0;
             left: 0;
             z-index: 2;
-            overflow: hidden;
+            
         }
 
         .metro-image img{
@@ -1892,14 +1893,14 @@ nav{
       *                    **/
 
         #scrollbar1 { width: 100%; height: 455px; clear: both; margin: 20px 0 10px; position: relative; }
-        #scrollbar1 .viewport { width: 100%; height: 455px; overflow: hidden; position: relative; }
+        #scrollbar1 .viewport { width: 100%; height: 455px;  position: relative; }
         #scrollbar1 .overview { list-style: none; position: absolute; left: 0; top: 0; }
         #scrollbar1 .thumb .end,
         #scrollbar1 .thumb {  }
         #scrollbar1 .scrollbar { position: absolute; float: right; width: 15px; bottom: 0; z-index: 2; }
         #scrollbar1 .track { background-color: #131718; height: 20px; width:13px; position: relative; padding: 0 1px; }
-        #scrollbar1 .thumb { height: 20px; width: 13px; cursor: pointer; overflow: hidden; position: absolute; top: 0; }
-        #scrollbar1 .thumb .end { overflow: hidden; height: 5px; width: 13px; }
+        #scrollbar1 .thumb { height: 20px; width: 13px; cursor: pointer;  position: absolute; top: 0; }
+        #scrollbar1 .thumb .end {  height: 5px; width: 13px; }
         #scrollbar1 .disable{ display: none; }
         .noSelect { user-select: none; -o-user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; }
 

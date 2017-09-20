@@ -15,7 +15,7 @@
 
 <div style="color:white;font-size:1.5rem;margin-left:20px;height:10%"><h1>学时管理</h1></div>
 <div id="message" style="color:#fff"></div>
-<div style="position:absolute;top:20%;margin:50px;"> 
+<div style="position:absolute;top:20%;"> 
 
         <div class="login">  
             <h1>学时管理</h1>  
@@ -60,55 +60,70 @@
     
     function xsadd(){
     var xhr=new XMLHttpRequest;
+    if(!xhr){alert("你的浏览器不支持AJAX，请使用Firefox、Chrome等现代浏览器");return;}
     var post=new FormData;
+    xhr.open("POST","score.php", true);
     var UID,TI,TO;
     UID=document.getElementById("UID").value;
     TI=document.getElementById("TIadd").value;
-    TO=document.getElementById("TSadd").value;
+    TS=document.getElementById("TSadd").value;
+    if(post){
     post.append("UID",UID);
     post.append("TI",TI);
-    post.append("TS",TO);
-    xhr.open("POST","score.php", true);
-    xhr.send(post);
+    post.append("TS",TS);
+    xhr.send(post);}else{
+        xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        xhr.send("UID="+UID+"&TI="+TI+"&TS="+TS);
+    }
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
                 document.getElementById("message").innerHTML=xhr.responseText;
                 window.setTimeout('document.getElementById("message").innerHTML="";',1000);
+                return;
             }
         }
     }
 
     function xssqm(){
         var xhr=new XMLHttpRequest;
+        if(!xhr){alert("你的浏览器不支持AJAX，请使用Firefox、Chrome等现代浏览器");return;}
         var post=new FormData;
         var NUM,TI,TO;
+        xhr.open("POST","sqm.php", true);
         NUM=document.getElementById("NUM").value;
         TI=document.getElementById("TIsqm").value;
         TO=document.getElementById("TSsqm").value;
+        if(post){
         post.append("NUM",NUM);
         post.append("TI",TI);
         post.append("TS",TO);
-        xhr.open("POST","sqm.php", true);
-        xhr.send(post);
+        xhr.send(post);}else{
+            xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+            xhr.send("NUM="+NUM+"&TI="+TI+"&TS="+TS);
+        }
         xhr.onreadystatechange = function() {
             if (xhr.readyState == 4 && xhr.status == 200) {
                     //document.getElementById("message").innerHTML=xhr.responseText;
                     alert(xhr.responseText);
+                    return;
                 }
             }
         }
 
     function xsaddpl(){
         var xhr=new XMLHttpRequest;
+        if(!xhr){alert("你的浏览器不支持AJAX，请使用Firefox、Chrome等现代浏览器");return;}
         var post=new FormData;
         doc = document.forms["upload_form"]["file"].files[0];
+        if(post){
         post.append("file",doc);
         xhr.open("POST","/root/admin/app/xs/updoc.php", true);
-        xhr.send(post);
+        xhr.send(post);}else{alert("你的浏览器不支持FORMDATA，请使用Firefox、Chrome等现代浏览器");return;}
         xhr.onreadystatechange = function() {
             if (xhr.readyState == 4 && xhr.status == 200) {
                    // document.getElementById("message").innerHTML=xhr.responseText;
                     alert(xhr.responseText);
+                    return;
                 }
             }
     }

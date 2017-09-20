@@ -29,11 +29,11 @@ if($row['TOKEN']!=$_COOKIE['TOKEN']){die("请先登录(27)");}
 <div style="color:white;font-size:1.5rem;margin-left:20px;heigh:10%"><h1>推送</h1></div>
 <div id="message" style="color:#fff"></div>
 
-<div style="position:absolute;top:20%;margin:50px;"> 
+<div style="position:absolute;top:15%;margin:50px;"> 
         <div class="login">
             <h1>发送推送</h1>
             <p style="color:red">通知七天内有效！</p><!--可以用逗号分割来向多个同学发送通知，push指令用于批量发送通知-->
-            <form method="post" action="javascript:push()">
+            <form method="post" action="javascript:push()" id="form">
             <button class="sub" type="submit">确定</button>
                 <input type="text" required="required" placeholder="UID" name="UID" id="UID"></input>
                 <input type="text" required="required" placeholder="通知标题" name="TITLE" id="TITLE"></input>
@@ -51,22 +51,29 @@ if($row['TOKEN']!=$_COOKIE['TOKEN']){die("请先登录(27)");}
 <script>
 function push(){
     var xhr=new XMLHttpRequest;
-    var post=new FormData;
+    if(!xhr){alert("你的浏览器不支持AJAX，请使用Firefox、Chrome等现代浏览器");return;}
     var UID,TI,TO;
     UID=document.getElementById("UID").value;
     TITLE=document.getElementById("TITLE").value;
     INFO=document.getElementById("INFO").value;
     LINK=document.getElementById("LINK").value;
+
+    var post=new FormData;
+    if(post){
     post.append("UID",UID);
     post.append("TITLE",TITLE);
     post.append("INFO",INFO);
     post.append("LINK",LINK);
     xhr.open("POST","push.php", true);
-    xhr.send(post);
+    xhr.send(post);}else{
+        xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+        xhr.send("UID="+UID+"&TITLE="+TITLE+"&INFO="+INFO+"&LINK="+LINK);
+    }
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
                 document.getElementById("message").innerHTML=xhr.responseText;
                 window.setTimeout('document.getElementById("message").innerHTML="";',1000);
+                return;
             }
         }
     }

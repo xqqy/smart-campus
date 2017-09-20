@@ -42,7 +42,7 @@ dl[dir=rtl] dd {
 dl[dir=rtl].horizontal dt {
   float: right;
   width: 10rem;
-  overflow: hidden;
+  
   clear: left;
   text-align: right;
   text-overflow: ellipsis;
