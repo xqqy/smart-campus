@@ -3,10 +3,9 @@
     <!DOCTYPE html>  
     <html>  
     <head>  
-    <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/96c356a7.js","daovoice")</script>
 
         <meta charset="UTF-8">  
-        <title>更改密码</title>  
+        <title>设置</title>  
         <link rel="stylesheet" type="text/css" href="admin.css"/>
 
 <script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/96c356a7.js","daovoice")</script>
@@ -14,26 +13,11 @@
     </head> 
  
     <body>  
-    <script>daovoice('init', {
-  app_id: "1f3d8ed1",
-  user_id: "<?php echo $_COOKIE['UID'] ?>", // 必填: 该用户在您系统上的唯一ID
-  name: <?php $con =new mysqli("localhost","login","loginmyphp","MAIN");/*connect mysql*/
-	if ($con->connect_error){die("Could not connect!");}
-if(!$_COOKIE["UID"]){die();}else{
-	$con->query('set names utf8'); 
-		$sql = "SELECT * FROM LOGIN WHERE UID=".$_COOKIE["UID"];
-		$result = $con->query($sql);
-		$row =  $result->fetch_assoc();
-		echo '"'.$row['NAME'].'"';}?>, // 选填: 用户名
- 
-});
-daovoice('update');</script>
 
 <div style="color:white;font-size:1.5rem;margin-left:20px;heigh:10%"><h1>设置</h1></div>
 
 
-<div style="top:10%;height:90%">
-
+<div style="float:left;">
         <div class="login">  
             <h1>更改密码</h1>  
             <form method="post" id="form">  
@@ -47,15 +31,14 @@ daovoice('update');</script>
 
 <p style="color:white">
 <?php
-
 if(!empty($_POST['OPSWD'])){
 $con =new mysqli("localhost","register","registerpswdbjsdfz","MAIN");/*connect mysql*/
-if ($con->connect_error){die("Could not connect!");}
+if ($con->connect_error){die("Could not connect!");;}
 
-if(!$_COOKIE["UID"]){echo "请先登录(54)";}else{
+if(!$_COOKIE["UID"]){echo "请先登录(39)";}else{
 
 
-$sql = "select * from LOGIN where UID='".$_COOKIE["UID"]."'";/*select things*/
+$sql = "select * from ADMIN where UID='".$_COOKIE["UID"]."'";/*select things*/
 $result = $con->query($sql);
 $row =  $result->fetch_assoc();
 
@@ -63,13 +46,13 @@ $row =  $result->fetch_assoc();
 if(password_verify($_POST['OPSWD'],$row['PSWD']))
 
 	{if($_POST["NPSWD"]==$_POST["RPSWD"])
-		{$sql="UPDATE LOGIN SET PSWD='". password_hash($_POST["NPSWD"],PASSWORD_DEFAULT) ."' WHERE UID='".$_COOKIE["UID"]."'";
+		{$sql="UPDATE ADMIN SET PSWD='". password_hash($_POST["NPSWD"],PASSWORD_DEFAULT) ."' WHERE UID='".$_COOKIE["UID"]."'";
 		$result=$con->query($sql);
 			if($result)
-			{echo "密码更改成功!";}
-			else{echo "密码更改失败！(69)";}}
-		else{echo "两次输入不一致(70)";}}
-	else{echo "原密码错误(71)";}}
+			{echo "密码更改成功!(53)";}
+			else{echo "密码更改失败！(54)";}}
+		else{echo "两次输入不一致(55)";}}
+	else{echo "原密码错误(56)";}}
 
 $con->close();}
 ?>
@@ -83,14 +66,14 @@ $con->close();}
 <p style="color:#000">点击确定前请确定指令及其附加值正确，错误的指令可能损坏您的账户！</p>
                 <input type="text" required="required" placeholder="指令" class="onlyNumAlpha" name="CMD"></input>  
                 <input type="text" placeholder="附加值" class="onlyNumAlpha" name="ADD"></input>  
-                <button class="sub" type="submit">确定</button>  
+                <button class="sub" type="submit">我已知风险并确定继续</button>  
 		
             </form>  
         </div>
 
     <div class="login">  
             <h1>关于</h1> <br /><br /> 
-            <a href="/License.txt"><button class="reg">License</button></a><br /><br />
+            <a href="/License"><button class="reg">License</button></a><br /><br />
                 <a href="/Thanks.txt"><button class="reg">Thanks</button></a>
         </div>  
     </div>  

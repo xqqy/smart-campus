@@ -54,3 +54,4 @@ if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录(4)");}/
                         $sql="DELETE FROM `ZYFZSQM` WHERE DATE<".time()-2592000;
                         $xs->query($sql);
                          ?>
+<a href="/zhfz/search/index.php"><button>返回</button></a>

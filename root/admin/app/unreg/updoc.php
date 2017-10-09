@@ -40,22 +40,34 @@ if ($_FILES["file"]["size"] < 2048000  and in_array($extension, $allowedExts))
 		echo "文件临时存储的位置: " . $_FILES["file"]["tmp_name"] . "<br>";
 		echo "文件内容:<br />";
 		
-		// 读取文件并开始批量导入
 		
+		//mysql预处理
 		$file = fopen($_FILES["file"]["tmp_name"], "r") or exit("无法打开文件!");
-		// 读取文件每一行，直到文件结尾
+		$tjp=$tj->prepare("DELETE FROM `PUSHMAIN` WHERE UID=?");
+		$tjp->bind_param("s",$id);
+		$xsp=$xs->prepare("DELETE FROM `ZYFZMAIN` WHERE UID=?");
+		$xsp->bind_param("s",$id);
+		$loginp=$con->prepare("DELETE FROM `LOGIN` WHERE UID=?");
+		$loginp->bind_param("s",$id);
+		// 读取文件并开始批量导入
 		while(!feof($file))
 		{
 			$in=str_getcsv(fgets($file));
 			if(!$in[0]){break;}
 		    print_r($in);
-			$sqltj="DELETE FROM `PUSHMAIN` WHERE UID='".$in[0]."'";
-			$sqlxs="DELETE FROM `ZYFZMAIN` WHERE UID='".$in[0]."'";
-			$sqllogin="DELETE FROM `LOGIN` WHERE UID='".$in[0]."'";
-		$resulttj=$tj->query($sqltj);
-		$resultxs=$xs->query($sqlxs);
-		$resultlogin=$con->query($sqllogin);
-		if($resultlogin and $resulttj and $resultxs){echo $in[0]."设置成功<br />";}else{echo $in[0]."设置失败<br />xs:".$resultxs."push:".$resulttj."login:".$resultlogin;;}
+			$id=$in[0];
+			$chk=$con->query("select * from `LOGIN` where UID='".$id."'");
+			$chkr=$chk->fetch_assoc();
+			if($chkr['NAME']){
+			$resulttj=$tjp->execute();
+			$resultxs=$xsp->execute();
+			$resultlogin=$loginp->execute();
+		if($resultlogin and $resulttj and $resultxs){
+			echo $in[0]."设置成功<br />";
+		}else{
+			echo $in[0]."<span style='color:red'>设置失败 xs:".$resultxs."push:".$resulttj."login:".$resultlogin."</span><br/>";
+		}
+	}else{echo $id."<span style='color:red'>查无此人</span><br />";}
 		}
 		fclose($file);
 
@@ -63,6 +75,7 @@ if ($_FILES["file"]["size"] < 2048000  and in_array($extension, $allowedExts))
 }
 else
 {
-	echo "非法的文件格式或文件过大";
+	echo "<span style='color:red'>非法的文件格式或文件过大(75)</span>";
 }
 ?>
+<a href="/root/admin/index.php"><button>返回</button></a>

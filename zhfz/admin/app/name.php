@@ -52,4 +52,5 @@ if($row['TOKEN']!=$_COOKIE['TOKEN']){echo"请先登录(42)";}else{
 <div style="color: #fff;">
 postADD:<?php echo $_COOKIE["ADD"]." "; ?>
 </div>
-<title>Cid system</title>
+<title>name</title>
+<a href="/zhfz/search/index.php"><button>返回</button></a>

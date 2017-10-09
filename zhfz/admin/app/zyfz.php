@@ -72,7 +72,7 @@ $conn->close();
 ?>
 <p style="font-size:25px">感谢使用查询系统</p>
 <p style="font-size:15px">2017校团委志愿者部</p>
-</meta>
 </div>
+<a href="/zhfz/search/index.php"><button>返回</button></a>
 </body>
 </html>

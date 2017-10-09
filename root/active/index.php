@@ -65,6 +65,7 @@ $sqla="SELECT * FROM `".$_COOKIE['UID']."` WHERE 1";
 $resulta=$at->query($sqla);
 if($resulta){
    if($rowa = $resulta->fetch_assoc()){
+           $sql="SELECT * FROM MAIN WHERE ATID='".$rowa['ATID']."'";
        $result=$con->query($sql);
        $row = $result->fetch_assoc();
        $now= new METRO($row);

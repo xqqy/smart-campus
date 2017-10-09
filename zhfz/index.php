@@ -11,7 +11,7 @@
     <link href="metro/css/metro-responsive.css" rel="stylesheet">
 
     <script src="metro/js/sha512.js"></script>
-    <script async="" src="metro/js/analytics.js"></script><script src="metro/js/jquery-2.js"></script>
+    <script async="" src="metro/js/analytics.js"></script><script src="metro/js/jquery.js"></script>
     <script src="metro/js/metro.js"></script>
  
     <style>

@@ -26,3 +26,4 @@ if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录(7)");}/
 		if($resultlogin and $resultauzn and $resultative){echo "设置成功<br />";}else{echo "设置失败<br />login:".$resultlogin."auzn:".$resultauzn."ative:".$resultative;}
 		
 ?>
+<a href="/root/admin/index.php"><button>返回</button></a>

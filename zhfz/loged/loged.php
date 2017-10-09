@@ -11,7 +11,7 @@
 	
 <br /><a href="/zhfz/party/zyfz.php" target="showframe"><button>查看志愿者学时</button></a><br />
 <a href="/zhfz/party/zhtj.php" target="showframe"><button>查看团籍信息</button></a><br />
-<a href="/zhfz/admin/adminh.php" target="showframe"><button>更改密码</button></a><br />
+<a href="/zhfz/admin/index.php" target="showframe"><button>更改密码</button></a><br />
 <a href="/zhfz/bush/bushh.php" target="showframe"><button>使用高级指令</button></a><br />
 
 </div>

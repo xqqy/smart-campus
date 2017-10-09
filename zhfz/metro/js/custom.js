@@ -1,36 +1,11 @@
 var menuState = 1;
 $(document).ready(function(){
-
-    // Normal Slider Starts
-    $(".slider").nivoSlider({
-        effect:"random",
-        slices:15,
-        boxCols:8,
-        boxRows:4,
-        animSpeed:500,
-        pauseTime:3000,
-        startSlide:0,
-        directionNav:true,
-        controlNav:false,
-        controlNavThumbs:false,
-        pauseOnHover:true,
-        manualAdvance:false,
-        prevText:'',
-        nextText: ''
-    });
-    // Normal Slider Ends
-
     // Metro Slider Starts
     var metroSlider = 0;
     $('.metro-slider .col').each(function(){
         metroSlider = metroSlider + 670;
     });
     $('.metro-slider').css('width',metroSlider+'px');
-
-    $('.metro-wrapper').tinyscrollbar({
-        axis: 'x',
-        size: 'auto'
-    });
     // Metro Slider Ends
 
 
@@ -324,14 +299,6 @@ $(document).ready(function(){
     });
     // Tabbed Content Ends
 
-    // Left Side Search Box Starts
-    var bodyHeight = parseInt( $('.rightSide').css('height').replace('px','') );
-
-    if(bodyHeight < 645){
-
-        $('.search-and-misc').css('position','relative').css('margin-top','20px');
-
-    }
     // Left Side Search Box Ends
 
 });
@@ -385,11 +352,6 @@ $(window).load(function(){
     // Isotope Options & Controls
     var $container = $('.gallery');
 
-    $container.isotope({
-        // options
-        itemSelector : '.columns',
-        layoutMode : 'fitRows'
-    });
 
 
     // filter items when filter link is clicked
@@ -408,10 +370,6 @@ $(window).resize(function(){
     widthCalc();
 
     // Metro Slider Responsiveness Fix Starts
-    $('.metro-wrapper').tinyscrollbar({
-        axis: 'x',
-        size: 'auto'
-    });
     // Metro Slider Responsiveness Fix Ends
 
 });

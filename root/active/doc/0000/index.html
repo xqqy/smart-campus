@@ -1,0 +1,124 @@
+<html>  
+    <head>  
+        <meta charset="UTF-8">  
+        <title>活动添加</title>  
+        <link rel="stylesheet" href="/zhfz/metro/css/jquery-ui.css">
+        <script src="/zhfz/metro/js/jquery.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    </head>  
+<style>
+       .sub{
+        width: 300px;
+        min-height: 20px;
+        background-color: #206ed4;   
+        border: 1px solid #3762bc;   
+        color: #fff;   
+        padding: 9px 14px;   
+        font-size: 15px;   
+        line-height: normal;   
+        border-radius: 5px;   
+    }  
+    input{
+        width: 200px;
+        min-height: 20px;
+    }
+    .form2{
+        opacity: 0;
+        animation:showen 2s forwards;
+    }
+    @keyframes hidden{
+        from{opacity:1;}
+        to{opacity: 0;}
+    }
+
+    @keyframes showen{
+        from{opacity:0;}
+        to{opacity: 1;}
+    }
+</style>
+
+
+<body style="background-color:#161719;">
+    <div class="form1" style="color:snow;text-align: center;height:90%;" id="div1">  
+        <h1>活动添加</h1>  
+        <form action="javascript:ative1()" method="post" id="form1" class="form1" enctype="multipart/form-data">
+            <input class="form1" required="required" placeholder="活动名称" id="NAME" name="NAME" type="text">
+            <input class="form1" required="required"  placeholder="活动编号" id="ATID" name="ATID" type="text">
+            <br class="form1" /><label class="form1" for="show">默认管理界面</label>
+            <select class="form1" name="show" id="show">
+                <option value="1">是</option>
+                <option value="0">否</option>
+            </select>
+            <label class="form1" for="button">显示加入按钮</label>
+            <select class="form1" name="button" id="button" >
+                    <option value="1">是</option>
+                    <option value="0">否</option>
+            </select><br class="form1"/>
+            <input class="form1" required="required"  placeholder="开始日期" id="DATAS" name="DATAS" type="text">
+            <input class="form1" required="required"  placeholder="结束日期" id="DATAE" name="DATAE" type="text">
+            <br class="form1"/>
+			<input class="form1" type="submit" class="sub" value="下一步">
+        </form>
+    </div>
+    <div class="form2" style="color:snow;text-align: center;" id="div2">  
+       
+    </div>
+</body>
+</html>
+
+<script>
+    function ative1(){
+        var xhr=new XMLHttpRequest;
+        var data1=new FormData(document.getElementById('form1'));
+        if(!data1){alert("您的浏览器不支持FORMDATA，请使用现代的浏览器");}
+        xhr.open("post","ative1.php",true);
+        data1.append("job","form1");
+        xhr.send(data1);
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState == 4){
+                if(xhr.status==200 && xhr.responseText=="done1"){
+                    hidd();
+                }else{
+                    alert("网络错误！")
+                }
+            }
+        }
+    }
+    function hidd(){
+        var form1=document.getElementsByClassName("form1")
+        var long1=form1.length;
+        var now=0;
+        while(now<long1){
+            form1[now].style.height="0%";
+            form1[now].style.animation="hidden 0.5s forwards";
+            now+=1
+        }
+        // animationend 事件在 CSS 动画完成后触发。(IE9及更早 IE 版本不支持)
+            var x = document.getElementById("div1");
+        // Chrome, Safari 和 Opera 代码
+        x.addEventListener("webkitAnimationEnd", showen);
+        // 标准语法
+        x.addEventListener("animationend", showen);
+    }
+    function showen(){
+        document.getElementById("div1").innerHTML=""
+        document.getElementById("div2").innerHTML='<h2 class="form2">现在上传文件</h2>'
+        document.getElementById("div2").innerHTML+='<form action="javascript:ative1()" method="post" id="form2" class="form2" enctype="multipart/form-data">'
+            document.getElementById("div2").innerHTML+= '<label class="form2" for="ative">活动页面</label>'
+            document.getElementById("div2").innerHTML+='<input class="form2" type="file" name="ative" id="ative">'
+            document.getElementById("div2").innerHTML+='<label class="form2" for="admin">管理页面</label>'
+            document.getElementById("div2").innerHTML+='<input class="form2" type="file" name="admin" id="admin"><br />'
+            document.getElementById("div2").innerHTML+='<label class="form2" for="admin">人员限制</label>'
+            document.getElementById("div2").innerHTML+='<input class="form2" type="file" name="admin" id="admin"><br />'
+            document.getElementById("div2").innerHTML+='<input class="form2" type="submit" class="sub" value="完成">'
+        document.getElementById("div2").innerHTML+='</form>'
+    }
+    $( function() {
+    $( "#DATAS" ).datepicker({
+      dateFormat: 'yy-mm-dd'
+    });
+    $( "#DATAE" ).datepicker({
+      dateFormat: 'yy-mm-dd'
+    });
+  } );
+</script>

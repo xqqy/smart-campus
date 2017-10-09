@@ -25,7 +25,7 @@
                 <li class="">
                     <div class="menu-abs-bg background-color"></div>
                     <div class="services-icon menu-specs">
-                        <a href="/root/admin/adminh.php" target="showframe">设置</a>
+                        <a href="/root/admin/index.php" target="showframe">设置</a>
                         <!--<span>更改密码、设置旧学号、个人信息……</span>-->
                     </div>
                 </li>
@@ -74,7 +74,7 @@ if($row['PUSH']==1){
 
 <script src="/zhfz/metro/js/jquery_002.js"></script>
 <script src="/zhfz/metro/js/custom.js"></script>
-<script src="/zhfz/metro/js/jquery-2.js"></script>
+<script src="/zhfz/metro/js/jquery.js"></script>
 
 
 </body></html>

@@ -1,7 +1,7 @@
 <html>  
     <head>  
         <meta charset="UTF-8">  
-        <title>登录</title>  
+        <title>批量注册</title>  
         <link rel="stylesheet" type="text/css" href="login.css"/>
     </head>  
 
@@ -10,7 +10,7 @@
         <h1>批量注册系统</h1>  
 <p style="color:red">导入前必须备份登录、学时、团籍表！</p>
         <form action="updoc.php" method="post" enctype="multipart/form-data">
-            <input required="required" placeholder="注册密码" class="onlyNumAlpha" id="pswd" name="pswd" type="text">
+            <input required="required" placeholder="注册密码" class="onlyNumAlpha" id="pswd" name="pswd" type="password">
 			<label for="file">文件名：</label>
 			<input type="file" name="file" id="file"><br />
 			<input type="submit" class="sub" value="提交">

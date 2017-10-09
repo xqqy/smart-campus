@@ -14,8 +14,8 @@
      if($row['TOKEN']!=$_COOKIE['TOKEN']){die("请先登录(14)");}
 
      $n=$_POST['NUM'];
-     $ti=$_POST['TI'];
-     $ts=$_POST['TS'];
+     $ti=$_POST['TIsqm'];
+     $ts=$_POST['TSsqm'];
      
      $xs =new mysqli("localhost","zyfz","zyfzalwayswithyou","ZYFZ");/*connect mysql*/
      if ($xs->connect_error){die("Could not connect!");} 
@@ -38,3 +38,4 @@ if(!$resultdo){echo "<br />一个代码生成失败";}else{echo "<br />".$rand;}
      $result=$xs->query($sql);
      if(!$result){echo "授权码超时删除失败！（39）";}
      ?>
+     <a href="/root/zyfz/"><button>返回</button></a>

@@ -31,24 +31,23 @@
         <div class="login">  
             <h1 style="font-size:1.8rem">获取授权码</h1>  
             <p style="color:red">授权码30天内有效！</p>
-            <form method="post" action="javascript:xssqm()" id="form" name="form"> 
+            <form method="post" action="sqm.php" id="form" name="form"> 
                 <input type="text" required="required" placeholder="获取个数" class="onlyNumAlpha" id="NUM" name="NUM" />
                 <input type="text" required="required" placeholder="校内学时" class="onlyNumAlpha" id="TIsqm" name="TIsqm" />
                 <input type="text" required="required" placeholder="校外学时" class="onlyNumAlpha" id="TSsqm" name="TSsqm" />
                 <button class="sub" type="submit">提交</button>
             </form>  
-        </div>  
+        </div>
 
 
 <div class="login">  
         <h1 style="font-size:1.5rem">批量学时添加系统</h1>  
 	<p style="color:red">导入前必须备份学时表！</p>
-        <form action="javascript:xsaddpl()" method="post" enctype="multipart/form-data" id="upload_form" name="upload_form">
+        <form action="updoc.php" method="post" enctype="multipart/form-data" id="upload_form" name="upload_form">
 			<label for="file">文件名：</label>
-			<input type="file" name="file" id="file"><br />
+			<input type="file" name="file" id="file" required="required"><br />
 			<button class="sub" type="submit">提交</button>
 		</form>
-	<a href="/root/admin/app/xs/help.txt">帮助</a>
 	</div>
 <!--"/root/admin/app/xs/updoc.php"-->
 
@@ -84,7 +83,7 @@
         }
     }
 
-    function xssqm(){
+  /*  function xssqm(){
         var xhr=new XMLHttpRequest;
         if(!xhr){alert("你的浏览器不支持AJAX，请使用Firefox、Chrome等现代浏览器");return;}
         var post=new FormData;
@@ -108,9 +107,9 @@
                     return;
                 }
             }
-        }
+        }*/
 
-    function xsaddpl(){
+ /*   function xsaddpl(){
         var xhr=new XMLHttpRequest;
         if(!xhr){alert("你的浏览器不支持AJAX，请使用Firefox、Chrome等现代浏览器");return;}
         var post=new FormData;
@@ -126,7 +125,7 @@
                     return;
                 }
             }
-    }
+    }*/
     </script>
 
 

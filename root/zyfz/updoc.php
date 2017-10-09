@@ -45,7 +45,7 @@ if ($_FILES["file"]["size"] < 2048000  and in_array($extension, $allowedExts))
 		$sql = "select * from `LOGIN` where UID='".$in[0]."'";/*select things查找原学时*/
                         $result = $con->query($sql);
 						$row =  $result->fetch_assoc();
-						if(!$row['NAME']){echo "<br />".$in[0]."查无此人";}else{
+						if(!$row['NAME']){echo "<br />".$in[0]."<span style='color:red'>查无此人</span>";}else{
 							$sql = "select * from `ZYFZMAIN` where UID='".$in[0]."'";/*select things查找原学时*/
 							$result = $xs->query($sql);
 							$row =  $result->fetch_assoc();
