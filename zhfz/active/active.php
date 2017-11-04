@@ -106,7 +106,7 @@ button {
                 $sql = "SELECT * FROM LOGIN WHERE UID='".$_COOKIE["UID"]."'";
                 $result = $con->query($sql);
                 $row =  $result->fetch_assoc();
-        $sql="INSERT INTO `".$_GET['ATID']."`(`UID`,`NAME`,`CID`) VALUES ('".$_COOKIE['UID']."','".$row['NAME']."','".$row['CID']."')";
+        $sql="INSERT INTO `".$_GET['ATID']."`(`UID`,`NAME`,`CID`,`TIME`) VALUES ('".$_COOKIE['UID']."','".$row['NAME']."','".$row['CID']."','".date('Y-m-d H:i:s', time())."');";
         $result = $ative->query($sql);
         if($result){echo "加入活动成功";}else{
         $sql="SELECT * FROM `".$_GET['ATID']."` WHERE UID='".$_COOKIE['UID']."'";
@@ -123,7 +123,7 @@ button {
         </div>
 
 
-
+        <script src="http://localhost/zhfz/metro/js/formdata.min.js"></script>
 
 
 <!--本系统在Apache License2.0协议下开源，您可以在关于页面下载到许可协议。在输入指令页面输入about即可打开-->

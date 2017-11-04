@@ -82,3 +82,4 @@ if($resulta){
 }else{echo "系统内部错误(82)";}
  ?>
 </div>
+<script src="http://localhost/zhfz/metro/js/formdata.min.js"></script>

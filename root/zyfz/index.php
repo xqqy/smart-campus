@@ -58,7 +58,14 @@
     <script>
     
     function xsadd(){
-    var xhr=new XMLHttpRequest;
+        if (window.XMLHttpRequest)
+    {// code for all new browsers
+        var xhr=new XMLHttpRequest;
+    }
+    else if (window.ActiveXObject)
+    {// code for IE5 and IE6
+        var xhr=new ActiveXObject("Microsoft.XMLHTTP");
+    }
     if(!xhr){alert("你的浏览器不支持AJAX，请使用Firefox、Chrome等现代浏览器");return;}
     var post=new FormData;
     xhr.open("POST","score.php", true);
@@ -145,5 +152,6 @@ if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录(24)");}
 	    $row =  $result->fetch_assoc();
     if($row['TOKEN']!=$_COOKIE['TOKEN']){die("请先登录(28)");} ?>
 
+<script src="http://localhost/zhfz/metro/js/formdata.min.js"></script>
 <!--本系统在Apache License2.0协议下开源，您可以在关于页面下载到许可协议。在输入指令页面输入about即可打开-->
 <!--This system is open source under Apache License2.0, You can get License in about page,open it by entry "about" in command page-->

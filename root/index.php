@@ -7,9 +7,13 @@
         <title>登录</title>  
         <link rel="stylesheet" type="text/css" href="login.css"/>
         <script src="/zhfz/metro/js/sha512.js"></script>
+        <script src="http://localhost/zhfz/metro/js/formdata.min.js"></script>
     </head>  
     <body>  
-
+<script>
+    if (!!window.ActiveXObject || "ActiveXObject" in window){
+    alert('你正在使用IE浏览器，本网页对于IE的支持并不好。建议更换为Firefox或Chrome')}
+</script>
 
         <div id="login">  
             <h1>欢迎</h1>  

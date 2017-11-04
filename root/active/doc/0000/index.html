@@ -4,7 +4,7 @@
         <title>活动添加</title>  
         <link rel="stylesheet" href="/zhfz/metro/css/jquery-ui.css">
         <script src="/zhfz/metro/js/jquery.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="/zhfz/metro/js/jquery-ui.js"></script>
     </head>  
 <style>
        .sub{
@@ -39,24 +39,40 @@
 
 
 <body style="background-color:#161719;">
-    <div class="form1" style="color:snow;text-align: center;height:90%;" id="div1">  
-        <h1>活动添加</h1>  
+    <div class="form1" style="color:snow;text-align: center;height:90%;" id="div1">
+        <h1>活动添加</h1>
+        
         <form action="javascript:ative1()" method="post" id="form1" class="form1" enctype="multipart/form-data">
-            <input class="form1" required="required" placeholder="活动名称" id="NAME" name="NAME" type="text">
-            <input class="form1" required="required"  placeholder="活动编号" id="ATID" name="ATID" type="text">
-            <br class="form1" /><label class="form1" for="show">默认管理界面</label>
-            <select class="form1" name="show" id="show">
-                <option value="1">是</option>
-                <option value="0">否</option>
-            </select>
-            <label class="form1" for="button">显示加入按钮</label>
-            <select class="form1" name="button" id="button" >
+            <div style="padding:2px">
+                <input class="form1" required="required" placeholder="活动名称" id="NAME" name="NAME" type="text">
+                <input class="form1" required="required"  placeholder="活动编号" id="ATID" name="ATID" type="text">
+                <br class="form1" />
+            </div>
+            <div style="padding:2px">
+                <label class="form1" for="show">默认管理界面</label>
+                <select class="form1" name="SHOW" id="show">
                     <option value="1">是</option>
                     <option value="0">否</option>
-            </select><br class="form1"/>
-            <input class="form1" required="required"  placeholder="开始日期" id="DATAS" name="DATAS" type="text">
-            <input class="form1" required="required"  placeholder="结束日期" id="DATAE" name="DATAE" type="text">
-            <br class="form1"/>
+                </select>
+                <label class="form1" for="button">显示加入按钮</label>
+                <select class="form1" name="BUTTON" id="button" >
+                        <option value="1">是</option>
+                        <option value="0">否</option>
+                </select><br class="form1"/>
+            </div>
+            <div style="padding:2px">
+                <input class="form1" required="required"  placeholder="活动信息" id="INFO" name="INFO" type="text">
+                <label class="form1" for="button">控制人员方式</label>
+                <select class="form1" name="PEOPLE" id="people" >
+                    <option value="2">限制表内人员</option>
+                    <option value="1">仅限表内人员</option>
+                </select><br class="form1"/>
+            </div>
+            <div style="padding:2px">
+                <input class="form1" required="required"  placeholder="开始日期" id="DATES" name="DATES" type="text">
+                <input class="form1" required="required"  placeholder="结束日期" id="DATEE" name="DATEE" type="text">
+                <br class="form1"/>
+            </div>
 			<input class="form1" type="submit" class="sub" value="下一步">
         </form>
     </div>
@@ -68,21 +84,89 @@
 
 <script>
     function ative1(){
-        var xhr=new XMLHttpRequest;
+        
+if (window.XMLHttpRequest)
+  {// code for all new browsers
+    var xhr=new XMLHttpRequest;
+  }
+else if (window.ActiveXObject)
+  {// code for IE5 and IE6
+  var xhr=new ActiveXObject("Microsoft.XMLHTTP");
+  }
         var data1=new FormData(document.getElementById('form1'));
         if(!data1){alert("您的浏览器不支持FORMDATA，请使用现代的浏览器");}
-        xhr.open("post","ative1.php",true);
-        data1.append("job","form1");
+        xhr.open("post","ative.php",true);
         xhr.send(data1);
+        document.cookie="ATID="+document.getElementById('ATID').value;
+
         xhr.onreadystatechange=function(){
             if(xhr.readyState == 4){
-                if(xhr.status==200 && xhr.responseText=="done1"){
+                if(xhr.status==200 && xhr.responseText=="done"){
                     hidd();
                 }else{
-                    alert("网络错误！")
+                    alert(xhr.responseText);
                 }
             }
         }
+    }
+    function ative2(){
+        var now=0;
+    if(document.forms["form2"]["ative"].files.length>0 && document.forms["form2"]["ative"].files[0].size<2097152){
+        if (window.XMLHttpRequest)
+        {// code for all new browsers
+          var xhr1=new XMLHttpRequest;
+         }
+        else if (window.ActiveXObject)
+         {// code for IE5 and IE6
+         var xhr1=new ActiveXObject("Microsoft.XMLHTTP");
+         }
+        xhr1.open("post","doc1.php",true);
+        var data1=new FormData;
+        if(!data1){alert("您的浏览器不支持FORMDATA，请使用现代的浏览器");}
+        data1.append("ative",document.forms["form2"]["ative"].files[0])
+        xhr1.send(data1);
+        xhr1.onreadystatechange=function(){
+            if(xhr1.readyState == 4){
+                    alert(xhr1.responseText)
+            }
+        }}
+        if(document.forms["form2"]["admin"].files.length>0 && document.forms["form2"]["admin"].files[0].size<2097152){
+        if (window.XMLHttpRequest)
+        {// code for all new browsers
+          var xhr2=new XMLHttpRequest;
+         }
+        else if (window.ActiveXObject)
+         {// code for IE5 and IE6
+         var xhr2=new ActiveXObject("Microsoft.XMLHTTP");
+         }
+        xhr2.open("post","doc2.php",true);
+        var data2=new FormData;
+        if(!data2){alert("您的浏览器不支持FORMDATA，请使用现代的浏览器");}
+        data2.append("ative",document.forms["form2"]["admin"].files[0])
+        xhr2.send(data2);xhr1.onreadystatechange=function(){
+            if(xhr2.readyState == 4){
+                    alert(xhr2.responseText)
+            }
+        }}
+
+        if(document.forms["form2"]["people"].files.length>0 && document.forms["form2"]["people"].files[0].size<2097152){
+        if (window.XMLHttpRequest)
+        {// code for all new browsers
+          var xhr3=new XMLHttpRequest;
+         }
+        else if (window.ActiveXObject)
+         {// code for IE5 and IE6
+         var xhr3=new ActiveXObject("Microsoft.XMLHTTP");
+         }
+        xhr3.open("post","doc3.php",true);
+        var data3=new FormData;
+        if(!data3){alert("您的浏览器不支持FORMDATA，请使用现代的浏览器");}
+        data3.append("ative",document.forms["form2"]["people"].files[0])
+        xhr3.send(data3);xhr3.onreadystatechange=function(){
+            if(xhr3.readyState == 4){
+                    alert(xhr3.responseText)
+            }
+        }}
     }
     function hidd(){
         var form1=document.getElementsByClassName("form1")
@@ -101,23 +185,39 @@
         x.addEventListener("animationend", showen);
     }
     function showen(){
+        var show=document.getElementById("show").value;
+        
         document.getElementById("div1").innerHTML=""
-        document.getElementById("div2").innerHTML='<h2 class="form2">现在上传文件</h2>'
-        document.getElementById("div2").innerHTML+='<form action="javascript:ative1()" method="post" id="form2" class="form2" enctype="multipart/form-data">'
-            document.getElementById("div2").innerHTML+= '<label class="form2" for="ative">活动页面</label>'
-            document.getElementById("div2").innerHTML+='<input class="form2" type="file" name="ative" id="ative">'
-            document.getElementById("div2").innerHTML+='<label class="form2" for="admin">管理页面</label>'
-            document.getElementById("div2").innerHTML+='<input class="form2" type="file" name="admin" id="admin"><br />'
-            document.getElementById("div2").innerHTML+='<label class="form2" for="admin">人员限制</label>'
-            document.getElementById("div2").innerHTML+='<input class="form2" type="file" name="admin" id="admin"><br />'
-            document.getElementById("div2").innerHTML+='<input class="form2" type="submit" class="sub" value="完成">'
-        document.getElementById("div2").innerHTML+='</form>'
+        var div2;
+        if(show==1){
+        div2='<h2 class="form2">现在上传文件</h2>'
+        div2+='<form action="javascript:ative2()" method="post" id="form2" class="form2" enctype="multipart/form-data">'
+            div2+= '<label class="form2" for="ative">活动页面</label>'
+            div2+='<input class="form2" type="file" name="ative" id="ative">'
+            div2+='<label class="form2" for="admin">管理页面</label>'
+            div2+='<input class="form2" type="file" name="admin" id="admin"><br />'
+            div2+='<label class="form2" for="admin">人员限制</label>'
+            div2+='<input class="form2" type="file" name="people" id="people"><br />'
+            div2+='<input class="form2" type="submit" class="sub" value="完成">'
+        div2+='</form>'}else{
+            div2='<h2 class="form2">现在上传文件</h2>'
+        div2+='<form action="javascript:ative2()" method="post" id="form2" class="form2" enctype="multipart/form-data">'
+            div2+= '<label class="form2" for="ative">活动页面</label>'
+            div2+='<input class="form2" type="file" name="ative" id="ative">'
+            div2+='<label class="form2" for="admin" >管理页面</label>'
+            div2+='<input class="form2" type="file" required="required" name="admin" id="admin"><br />'
+            div2+='<label class="form2" for="admin">人员限制</label>'
+            div2+='<input class="form2" type="file" name="people" id="people"><br />'
+            div2+='<input class="form2" type="submit" class="sub" value="上传">'
+        div2+='</form>'
+        }
+        document.getElementById("div2").innerHTML=div2;
     }
     $( function() {
-    $( "#DATAS" ).datepicker({
+    $( "#DATES" ).datepicker({
       dateFormat: 'yy-mm-dd'
     });
-    $( "#DATAE" ).datepicker({
+    $( "#DATEE" ).datepicker({
       dateFormat: 'yy-mm-dd'
     });
   } );

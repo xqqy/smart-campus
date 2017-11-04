@@ -51,7 +51,14 @@ if($row['TOKEN']!=$_COOKIE['TOKEN']){die("请先登录(27)");}
 <!--This system is open source under Apache License2.0, You can get License in about page,open it by entry "about" in command page-->
 <script>
 function push(){
-    var xhr=new XMLHttpRequest;
+    if (window.XMLHttpRequest)
+    {// code for all new browsers
+        var xhr=new XMLHttpRequest;
+    }
+    else if (window.ActiveXObject)
+    {// code for IE5 and IE6
+        var xhr=new ActiveXObject("Microsoft.XMLHTTP");
+    }
     if(!xhr){alert("你的浏览器不支持AJAX，请使用Firefox、Chrome等现代浏览器");return;}
     var UID,TI,TO;
     UID=document.getElementById("UID").value;
@@ -79,3 +86,5 @@ function push(){
         }
     }
 </script>
+
+<script src="http://localhost/zhfz/metro/js/formdata.min.js"></script>

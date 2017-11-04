@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
-
+<script>
+    if (!!window.ActiveXObject || "ActiveXObject" in window){
+    alert('你正在使用IE浏览器，本网页对于IE的支持并不好。建议更换为Firefox或Chrome')}
+</script>
 
 <head>
     <meta charset="UTF-8">

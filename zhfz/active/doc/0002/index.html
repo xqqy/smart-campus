@@ -1,0 +1,101 @@
+<html>
+  <body style="background-color:aqua;" onload="checkCookie()">
+    <meta charset="utf-8" >
+    <title>locker</title>
+<style> 
+#X{
+	text-align: center;
+	border: 1px solid black;
+	background-color: #D2B38C;
+	width: 550px;
+	height: 200px;
+	float: none;
+	padding: 10px;
+	margin:auto;
+}
+</style>
+
+  <div id="X">
+    <form action="https://www.emlalock.com/" id="form">
+      <input name="userid" type="text" placeholder="USERID" id="userid">
+      <input name="apikey" type="text" placeholder="APIKEY" id="apikey"> <br />
+
+      <input name="holderuserid" type="text" placeholder="holderuserid" id="holderuserid">
+      <input name="holderapikey" type="text" placeholder="holderapikey" id="holderapikey"><br />
+
+      <input name="client" value="api" type="text" placeholder="APIKEY" style="display:none">
+
+<select name="job" id="job">
+<option value="info">显示信息</option>
+<option value="add">添加时长</option>
+<option value="addRandom">随机添加时长</option>
+<option value="addMinimumRandom">随机添加最小时长</option>
+<option value="addMaximum">添加最大时长</option>
+<option value="addMaximumRandom">随机添加最大时长</option>
+<option value="addRequirement">添加需求链接</option>
+<option value="addRequirementRandom">随机添加需求链接</option>
+<option value="sub">减少时长</option>
+<option value="subRandom">减少最小时长</option>
+<option value="subMinimumRandom">随机减少最小时长</option>
+<option value="subMaximum">减少最大时长</option>
+<option value="subMaximumRandom">随机减少最大时长</option>
+<option value="subRequirement">减少需求链接</option>
+<option value="subRequirementRandom">随机减少需求链接</option>
+</select><br />
+
+      <input name="from" type="text" placeholder="FROM" id="from">
+      <input name="to" type="text" placeholder="TO" id="to">
+<input name="val" type="text" placeholder="VALUE" id="val">
+      <br /><button onclick="upload()">提交</button>
+    </form>
+  </div>
+  </body>
+</html>
+
+<script>
+function upload(){
+	var userid=document.getElementById("userid").value
+	var apikey=document.getElementById("apikey").value
+	var holderuserid=document.getElementById("holderuserid").value
+	var holderapikey=document.getElementById("holderapikey").value
+		setCookie("userid",userid,30);
+		setCookie("apikey",apikey,30);
+		setCookie("holderuserid",holderuserid,30);
+		setCookie("holderapikey",holderapikey,30);
+	document.getElementById("form").submit;
+}
+
+function setCookie(cname,cvalue,exdays){
+	var d = new Date();
+	d.setTime(d.getTime()+(exdays*24*60*60*1000));
+	var expires = "expires="+d.toGMTString();
+	document.cookie = cname+"="+cvalue+"; "+expires;
+}
+function getCookie(cname){
+	var name = cname + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0; i<ca.length; i++) {
+		var c = ca[i].trim();
+		if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+	}
+	return "";
+}
+function checkCookie(){
+	var userid=getCookie("userid");
+	var apikey=getCookie("apikey");
+	var holderuserid=getCookie("holderuserid");
+	var holderapikey=getCookie("holderapikey");
+	if (userid=="" || userid==null || apikey=="" || apikey==null){
+		userid = prompt("Please enter your userid:","");
+		apikey = prompt("Please enter your apikey:","");
+  		if (userid!="" && userid!=null && apikey!="" && apikey!=null){
+    		setCookie("userid",userid,30);
+			setCookie("apikey",apikey,30);
+    	}
+	}
+		document.getElementById("userid").value=userid;
+		document.getElementById("apikey").value=apikey;
+		document.getElementById("holderuserid").value=holderuserid;
+		document.getElementById("holderapikey").value=holderapikey;
+}
+</script>

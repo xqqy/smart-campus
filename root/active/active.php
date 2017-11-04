@@ -27,6 +27,7 @@ a{
         <th>UID</th>
         <th>姓名</th>
         <th>5位学号</th>
+        <th>加入时间</th>
         <th>删除此人</th>
         <th>封禁此人</th>
     </tr>
@@ -70,6 +71,7 @@ a{
                             echo "<td>".$this->uid."</td>";
                             echo "<td>".$this->name."</td>";
                             echo "<td>".$this->cid."</td>";
+                            echo "<td>".$this->time."</td>";
                             echo "<td><a href=active.php?ATID=".$_GET['ATID']."&delUID=".$this->uid.">删除</a>";
                             echo "<td><a href=active.php?ATID=".$_GET['ATID']."&banUID=".$this->uid.">封禁</a>";
                         echo"</tr>";
@@ -79,6 +81,7 @@ a{
                         $this->uid=$row['UID'];
                         $this->name=$row['NAME'];
                         $this->cid=$row['CID'];
+                        $this->time=$row['TIME'];
                 }
                 
         }
@@ -240,3 +243,4 @@ $ative->close();
         else{echo "<script language='javascript'>alert('解封".$_GET['unbanUID']."失败');<script>";}
     }
 ?>
+<script src="http://localhost/zhfz/metro/js/formdata.min.js"></script>

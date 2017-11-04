@@ -94,6 +94,7 @@ $con->close();}
         return;
     }
 </script>
+<script src="http://localhost/zhfz/metro/js/formdata.min.js"></script>
     </body>
     </html>
 
