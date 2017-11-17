@@ -19,7 +19,6 @@ if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录(7)");}/
 			$sqlauzn="INSERT INTO `AUZN`(`UID`, `ZYFZ`, `PUSH`) VALUES ('".$_POST['UID']."','".$_POST['zyfz']."','".$_POST['push']."')";
 			$sqllogin="INSERT INTO `ADMIN`(`UID`, `PSWD`, `TOKEN`, `NAME`) VALUES ('".$_POST['UID']."','".'$2y$10$vgInweVwkJZIjvPPe0Vk3ufiC.KlsSQ7wkAyEORA6zugXtbeqBgn6'."','','".$_POST['name']."')";
 			$sqlativep="CREATE TABLE `ATIVEP`.`".$_POST['UID']."` ( `ATID` VARCHAR(40) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT '活动编号' , `VER` VARCHAR(5) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL COMMENT '是否使用模板' ) ENGINE = InnoDB";
-			$sqlativep2="INSERT INTO `".$_POST['UID']."` (`ATID`, `VER`) VALUES ('00000', '0');";
 			$resultative=$at->query($sqlativep);
 			$resultauzn=$con->query($sqlauzn);
 		$resultlogin=$con->query($sqllogin);

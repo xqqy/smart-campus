@@ -243,4 +243,3 @@ $ative->close();
         else{echo "<script language='javascript'>alert('解封".$_GET['unbanUID']."失败');<script>";}
     }
 ?>
-<script src="http://localhost/zhfz/metro/js/formdata.min.js"></script>

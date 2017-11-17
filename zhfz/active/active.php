@@ -123,7 +123,6 @@ button {
         </div>
 
 
-        <script src="http://localhost/zhfz/metro/js/formdata.min.js"></script>
 
 
 <!--本系统在Apache License2.0协议下开源，您可以在关于页面下载到许可协议。在输入指令页面输入about即可打开-->

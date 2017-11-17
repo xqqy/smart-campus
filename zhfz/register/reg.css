@@ -26,13 +26,12 @@
     }   
     #login h1{   
         color: #000000;   
-
         letter-spacing: 1px;   
         text-align: center;   
     }   
     h1{   
         font-size: 4em;   
-        margin: 0.67em 0;   
+        margin-top:0.70rem;
     }   
     input{   
         width: 278px;   

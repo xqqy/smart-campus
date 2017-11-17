@@ -2,7 +2,7 @@
 <!doctype html>
 <head>
   <meta charset="UTF-8"> 
-  <title>综合查询</title>
+  <title>通知中心</title>
 </head>
 <html>  
 <style>
@@ -144,6 +144,5 @@ $con->query($sql);
         ?>
 
 </div>
-<script src="http://localhost/zhfz/metro/js/formdata.min.js"></script>
 </body>  
 </html>  

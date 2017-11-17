@@ -67,13 +67,13 @@
         var xhr=new ActiveXObject("Microsoft.XMLHTTP");
     }
     if(!xhr){alert("你的浏览器不支持AJAX，请使用Firefox、Chrome等现代浏览器");return;}
-    var post=new FormData;
     xhr.open("POST","score.php", true);
     var UID,TI,TO;
     UID=document.getElementById("UID").value;
     TI=document.getElementById("TIadd").value;
     TS=document.getElementById("TSadd").value;
-    if(post){
+    if(self.FormData){
+    var post=new FormData;
     post.append("UID",UID);
     post.append("TI",TI);
     post.append("TS",TS);
@@ -152,6 +152,5 @@ if(empty($_COOKIE['UID']) or empty($_COOKIE['TOKEN'])){die("请先登录(24)");}
 	    $row =  $result->fetch_assoc();
     if($row['TOKEN']!=$_COOKIE['TOKEN']){die("请先登录(28)");} ?>
 
-<script src="http://localhost/zhfz/metro/js/formdata.min.js"></script>
 <!--本系统在Apache License2.0协议下开源，您可以在关于页面下载到许可协议。在输入指令页面输入about即可打开-->
 <!--This system is open source under Apache License2.0, You can get License in about page,open it by entry "about" in command page-->

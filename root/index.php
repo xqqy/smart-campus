@@ -7,7 +7,6 @@
         <title>登录</title>  
         <link rel="stylesheet" type="text/css" href="login.css"/>
         <script src="/zhfz/metro/js/sha512.js"></script>
-        <script src="http://localhost/zhfz/metro/js/formdata.min.js"></script>
     </head>  
     <body>  
 <script>

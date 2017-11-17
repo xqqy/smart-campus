@@ -65,15 +65,16 @@ function push(){
     TITLE=document.getElementById("TITLE").value;
     INFO=document.getElementById("INFO").value;
     LINK=document.getElementById("LINK").value;
-
-    var post=new FormData;
-    if(post){
+    
+    if(self.FormData){
+       var post=new FormData();
     post.append("UID",UID);
     post.append("TITLE",TITLE);
     post.append("INFO",INFO);
     post.append("LINK",LINK);
     xhr.open("POST","push.php", true);
     xhr.send(post);}else{
+        xhr.open("POST","push.php", true);
         xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
         xhr.send("UID="+UID+"&TITLE="+TITLE+"&INFO="+INFO+"&LINK="+LINK);
     }
@@ -87,4 +88,3 @@ function push(){
     }
 </script>
 
-<script src="http://localhost/zhfz/metro/js/formdata.min.js"></script>

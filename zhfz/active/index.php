@@ -89,4 +89,3 @@ if(!$_COOKIE["UID"]){echo "请先登录(83)";}else{
  
 });
 daovoice('update');</script>
-<script src="http://localhost/zhfz/metro/js/formdata.min.js"></script>
